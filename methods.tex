@@ -1,0 +1,52 @@
+%!TEX root = main.tex
+
+\section{Methods}\label{sec:methods}
+
+\subsection{Star-Forming vs.~Quiescent}\label{sec:SFvsQ}
+
+Each galaxy our the sample was classified as star-forming (late-type) or quiescent (early-type) using the following equation \todo{source!}:
+
+\begin{equation}\label{eq:}
+	\log(\text{SFR}) = -1.29 + 0.65 \log(\mstar-10) + 1.33(z-0.1) %\nonumber
+\end{equation}
+
+where SFR is in units of $\msun$~yr$^{-1}$ and $\mstar$ is stellar mass in units of $\msun$.
+
+\subsection{Isolated Primaries}\label{sec:IP}
+
+No group catalog
+
+Similar criteria as Kauffman et al.~(2013)
+
+A galaxy is classified as an isolate primary (IP) if there are no other galaxies with stellar mass greater than $\mstar/2$ within a projected radius $\Rproj$ and redshift difference $\Delta z$ from the IP candidate.
+
+$\Delta z$ chosen to integrate over peculiar velocities and redshift distortions: PRIMUS redshift resolution is limited by $\Delta z=0.005(1+z)$.
+
+Because PRIMUS is a flux-limited survey, the minimum stellar mass of a galaxy at which the sample is complete increases with redshift.  It also depends on field and galaxy star-formation status.  To avoid falsely classifying a galaxy as an isolated primary, a galaxy was only considered to be a candidate for IP status if its stellar mass is greater than the stellar mass at which our sample is complete.  A galaxy with star-formation status $s$ and redshift $z$ in field $f$ was only considered to be an IP candidate if its stellar mass is at least $\mMoustakas(f,\,s,\,z)-0.5$~dex, where $\mMoustakas$ are the stellar mass completeness limits for PRIMUS from \citet{Moustakas13}.  These values are shown in Table~\ref{table:masslimits}.
+
+\subsubsection{Default Parameters}\label{sec:defaultParams}
+
+$\Rproj=500$~kpc
+
+$\Delta z=0.005(1+z_{\text{IP}})$ 
+
+Minimum stellar mass for IP candidate status: $\mstar \ge \mMoustakas-0.5$~dex
+
+At $z\le1.0$ our sample is complete at $\langle \log(\mstar/\msun) \rangle \ge \#$, where the average is taken over all fields.  Of the \totalgals~galaxies in our sample, $\#$ (or $\#\%$) are isolated primaries.
+
+\subsubsection{Other Parameter Sets}
+
+More conservative mass completeness limit: $\mstar \ge \mMoustakas$
+
+Single mass completeness limit independent of field, redshift, and SF status: $\mstar \ge 10^{10} \msun$
+
+Different cylinder depths: $0.005(1+z)/\Delta z=0.5$ to 3.0
+
+%\input{tables/mass_limits}
+
+\subsection{Late-Type Fraction}
+
+We next counted the total number and number of star-forming galaxies within $\Delta v$ within $\Rproj$ to $\Rproj~+~0.25$~Mpc around each IP, and added the results for all IPs to obtain the fraction of late-type galaxies for each annulus.  All galaxies were allowed to contribute to the totals for each IP, such that one IP could be counted as a satellite of a different IP.
+
+Figure~\ref{fig:} shows the fraction of galaxies that are late-type as a function of projected radius around early-type and late-type IPs for our default sample.  Error bars are Poissonian.
+

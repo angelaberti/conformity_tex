@@ -1,0 +1,242 @@
+%!TEX root = main.tex
+
+\section{Results}\label{sec:results}
+% ENTIRE SAMPLE (all stellar masses and redshifts)
+
+%\begin{figure}
+%  \epsscale{1.1}
+%  \epstrim{0.4in 0.2in 0.4in 0.4in}
+%  \fbox{\plotone{figures/latefracplot_BSE_IPmatchFBF_PHI37_allz}}
+%  \plotone{figures/latefracplot_BSE_IPmatchFBF_PHI37_allz}
+%  \caption{Late-type neighbor fractions to $\Rproj<5$~Mpc for all late- (solid blue) and early-type (dashed red) IPs in our matched stellar mass and redshift distribution IP samples.
+%}
+%  \label{fig:latefrac_full}
+%\end{figure}
+
+\subsection{Neighbor Late-type Fractions}\label{sec:LTfraction}
+
+Galactic conformity is the observed tendency of neighbor galaxies to have the same star-formation type (quiescent (early) or star-forming (late)) as their associated IP galaxy.
+One-halo conformity refers to conformity between an IP and the neighbors within its own dark matter halo (i.e.~within $\sim1$~Mpc of the IP),
+while two-halo conformity refers to conformity between an IP and neighbors in other adjacent haloes (i.e.~at distances greater than $\sim1$~Mpc from the IP).
+
+We are interested in how the fraction of neighbors that are late-type differs between star-forming and quiescent IP hosts as a function of projected distance from the IP.
+For each IP in our matched sample, we counted all neighbors within concentric cylindrical shells of length $2\times2\,\sigma_{z}(1+z_{\text{IP}})$ and cross-sectional area
+$\pi[(\Rproj+d\Rproj)^ 2-\Rproj^2]$, where $\Rproj$ is the 2D projected distance from the IP in (physical) Mpc, and $d\Rproj$ is the shell width in Mpc.
+The late-type fraction of neighbors of star-forming IPs in a cylindrical shell at projected distance $\Rproj$ to ${(\Rproj+d\Rproj)}$, $f^{\textrm{SF-IP}}_{\textrm{late}}
+(\Rproj)$, is defined to be the sum of the targeting weights (see~\S\ref{sec:targ_weight}) of the late-type neighbors of star-forming IPs in the shell, divided by the sum of the
+targeting weights of \emph{all} neighbors of star-forming IPs in the shell:
+\begin{equation}
+        f^{\textrm{SF-IP}}_{\textrm{late}}(\Rproj) = \frac
+        {\displaystyle \sum_{i=1}^{N_{\textrm{SF-IP}}} \sum_{j=1}^{N_{\textrm{late},i}} w_{ij} }
+        {\displaystyle \sum_{i=1}^{N_{\textrm{SF-IP}}} \sum_{k=1}^{N_{\textrm{tot},i}} w_{ik} }, \nonumber
+\end{equation}
+and likewise for quiescent IPs.
+$N_{\textrm{SF-IP}}$ is the total number of star-forming IPs, $N_{\textrm{late},i}$ is the number of late-type neighbors of IP $i$ in the shell, $N_{\textrm{tot},i}$ is the
+total number of neighbors of IP $i$ in the shell, and $w_{ij}$ and $w_{ik}$ are PRIMUS targeting weights of the neighbors.  We are therefore computing neighbor late-type fractions for star-forming and quiescent IPs by stacking the neighbors of all IPs of each type.
+Stacked neighbor late-type fractions for our full matched sample of star-forming and quiescent IPs are shown in Figure~\ref{fig:latefrac_full}.  Errors in each radial bin have been estimated by bootstrap resampling.
+
+\begin{figure}
+  \epsscale{1.1}
+  \epstrim{0.4in 0.1in 0.3in 0.4in}
+%  \fbox{\plotone{figures/latefracplot_BSE_IPmatchFBF_PHI37_allz_250kpc}}
+  \plotone{figures/latefracplot_BSE_IPmatchFBF_PHI37_allz_250kpc}
+  \caption{Neighbor late-type fractions to {$\Rproj<5$~Mpc} in {$d\Rproj=0.25$~Mpc} radial bins for all star-forming (blue solid line) and quiescent (red dashed line) IPs in the full sample.
+}
+  \label{fig:latefrac_full}
+\end{figure}
+
+Within a particular radial bin (shell), this stacking method weighs IPs with more neighbors more heavily than those with fewer or no neighbors in that bin.
+We also examine the effect of assigning equal weight to each IP in our measurement of $f_{\textrm{late}}$ by computing the neighbor late-type fraction individually for each IP in each radial bin, and then taking (again within each radial bin) the median of the distribution of all non-zero fractions for both IP types.
+The result is shown in Figure~\ref{fig:latefrac_quartiles}, which also shows the mean individual neighbor late-type fraction for both IP types in each radial bin (again using only non-zero fractions),
+and the interquartile range of the combined distribution for both IP types.
+The difference between neighbor late-type fractions for star-forming and quiescent IPs in each radial bin is present whether IPs are weighted equally, or proportionally to their number of neighbors.
+
+\begin{figure}
+  \epsscale{1.1}
+  \epstrim{0.5in 0.1in 0.3in 0.3in}
+%  \fbox{\plotone{figures/latefracplot_BSE_IPmatchFBF_PHI37_allz_median_quartiles}}
+  \plotone{figures/latefracplot_BSE_IPmatchFBF_PHI37_allz_median_quartiles}
+  \caption{Same as Figure~\ref{fig:latefrac_full} except $f_{\textrm{late}}$ is the median of the distribution of non-zero individual neighbor late-type fractions for each IP at value of $\Rproj$.
+Also shown is the mean of the non-zero neighbor late-type fraction distributions for star-forming and quiescent IPs (purple dash-dot and magenta dotted lines),
+and the interquartile range of the combined distribution for both IP types (gray shaded region).
+}
+  \label{fig:latefrac_quartiles}
+\end{figure}
+
+\subsection{Conformity Signal}\label{sec:signal}
+
+We define the normalized conformity signal $\signorm$ at projected radius $\Rproj$ as the difference of the neighbor late-type fractions of star-forming and quiescent IPs, 
+divided by the mean of those two fractions:
+
+\begin{equation}
+	\signorm(\Rproj) = \frac
+	{ f^{\textrm{SF-IP}}_{\textrm{late}}-f^{\textrm{Q-IP}}_{\textrm{late}} }
+	{ \left( f^{\textrm{SF-IP}}_{\textrm{late}}+f^{\textrm{Q-IP}}_{\textrm{late}} \right) /2}
+\end{equation}
+
+Table~\ref{table:signal} presents the magnitude, error, and significance of the conformity signal in our full sample in the ranges $\Rproj=0\textendash1$, $1\textendash3$, and $3\textendash5$~Mpc.
+We also divide our sample into redshift bins and stellar mass bins, each containing equal numbers of IPs, to investigate and dependence in the magnitude of the signal on redshift or stellar mass.
+In all cases in Table~\ref{table:signal} we estimate the uncertainty in $\signorm$ using both bootstrap and jackknife resampling,
+and quote the siginificance we find using each method as $\sigma_{\textrm{BS}}$ and $\sigma_{\textrm{JK}}$, respectively.
+We compute bootstrap errors by selecting 90 percent of the data randomly with replacement 200 times, and then taking the standard deviation of the 200 results.
+To compute jackknife errors we divide the survey area of our full IP sample into 10 regions of approximately $0.5~\degsq$ each.
+We then compute $\signorm$ 10 times, systematically excluding one of the 10 jackknife samples each time, and take the standard deviation of the 10 results.
+It is critical to note that the jackknife method always yields larger errors than the bootstrap method, and thus we always find that $\sigma_{\textrm{JK}}$ is less than $\sigma_{\textrm{BS}}$.
+For example, using our full sample we find that for {$0<\Rproj<1$~Mpc} the bootstrap error in $\signorm$ is ${\pm0.008}$ ($\sigma_{\textrm{BS}}=6.8$) while the jackknife error is ${\pm0.015}$
+($\sigma_{\textrm{JK}}=3.6$).
+
+Figure~\ref{fig:normsig_full} shows $\signorm$ for the full sample in {$d\Rproj=1$~Mpc} bins with both jackknife and bootstrap errors.
+
+\input{tables/signal_uber}
+
+\begin{figure}
+  \epsscale{1.1}
+  \epstrim{0.3in 0.1in 0.2in 0.3in}
+%  \fbox{\plotone{figures/normsigplot_allz_errorCompare}}
+  \plotone{figures/normsigplot_allz_errorCompare}
+  \caption{Normalized conformity signal $\signorm$ for the full sample to {$\Rproj<5$~Mpc} with both bootstrap (orange) and jackknife errors (black).
+}
+  \label{fig:normsig_full}
+\end{figure}
+
+\subsection{Cosmic Variance}\label{sec:cosmic_var}
+
+Errors estimated with jackknife resampling incorporate differences in the magnitude of the conformity signal among spatially distinct regions of the sky.
+The fact that $\sigma_{\textrm{JK}}$ is significantly less than $\sigma_{\textrm{BS}}$ for every conformity signal measurement in Table~\ref{table:signal}
+illustrates the crucial importance of accounting for cosmic variance in any conformity measurement.
+We further investigate how the conformity signal in PRIMUS is sensitive to cosmic variance by measuring the 1-halo term of $\signorm$ ($0<\Rproj<1$~Mpc) for each field individually.
+The results are shown in Table~\ref{table:signal_fields} and Figure~\ref{fig:normsig_fields_1halo}.
+Among the five fields in our full sample, we find that the 1-halo term of $\signorm$ varies from over $12\%$ with $\sigma_{\textrm{BS}}=5.9$ in ES1, to $\sim5\%$ in CDFS, COSMOS, and XMM-CFHTLS, to $0\%$ with $\sigma_{\textrm{BS}}\simeq0$ in XMM-SXDS.
+
+\begin{figure}
+  \epsscale{1.1}
+  \epstrim{0.4in 0.7in 0.3in 0.3in}
+%  \fbox{\plotone{figures/normsigplot_byField_1halo}}
+  \plotone{figures/normsigplot_byField_1halo}
+  \caption{
+1-halo term of $\signorm$ for each field and the full sample in the range {$0<\Rproj<1$~Mpc}.
+Field errors are estimated by bootstrap resampling within the field, while the error on the full sample point is estimated by jackknife resampling.
+}
+  \label{fig:normsig_fields_1halo}
+\end{figure}
+
+\input{tables/signal_fields}
+
+\subsection{Redshift and Stellar Mass Trends}\label{sec:z_mass_bins}
+
+In Figure~\ref{fig:latefrac_normsig_compare} we divide the full IP sample into two redshift and two stellar mass bins containing equal numbers of IPs.
+The upper panels show $f_{\textrm{late}}$ for star-forming and quiescent IPs in each redshift or stellar mass bin,
+while the lower panels plot the corresponding values of $\signorm$ for each bin (also see Table~\ref{table:signal}).
+Dividing the full sample into even two bins yields errors that are simply too large to draw meaningful conclusions about whether we observe any trend in $\signorm$ with either redshift or stellar mass.
+This is unsurprising considering that $\sigma_{\textrm{JK}}$ for the 1-halo component of $\signorm$ in the full sample is only 3.6.
+
+\begin{figure*}
+  \epsscale{1.0}
+  \epstrim{0.2in 0.4in 0.4in 0.8in}
+%  \fbox{\plotone{figures/latefrac_normsig_binnedCompare}}
+  \plotone{figures/latefrac_normsig_binnedCompare}
+  \caption{
+Top panels: Neighbor late-type fractions at $\Rproj<5$~Mpc for all star-forming (blue solid and dash-dot lines) and quiescent (red dashed lines) IPs in our matched sample divided into two redshift bins (left) and two stellar mass bins (right).  Errors are bootstrap.
+Bottom panels: $\signorm$ for the corresponding redshift and stellar mass divisions in the top panels.  Errors are jackknife.
+The bottom panels also show $\signorm$ for the higher redshift bin (left) and higher stellar mass bin (right) computed \emph{without} the COSMOS field (gray dashed lines).
+}
+  \label{fig:latefrac_normsig_compare}
+\end{figure*}
+
+%\subsection{COSMOS}\label{sec:cosmos}
+
+
+
+
+%\begin{figure}
+%  \epsscale{1.1}
+%  \epstrim{0.3in 0.6in 0.4in 1in}
+%  \fbox{\plotone{figures/normsigplot_JKE_IPmatchFBF_PHI37_panels}}
+%  \plotone{figures/normsigplot_JKE_IPmatchFBF_PHI37_panels}
+%  \caption{
+%Top panel:
+%\todo{replace with previous figure?}
+%Normalized conformity signal for the full sample to $\Rproj=5$~Mpc with jackknife errors.
+%The signal is also shown excluding the COSMOS field (gray dashed line).
+%Middle panel:
+%Normalized conformity signal for two redshift bins containing equal numbers of IP galaxies (jackknife errors).
+%The signal for the higher redshift bin is also shown excluding the COSMOS field (gray dashed line).
+%Bottom panel:
+%Normalized conformity signal for two stellar mass bins containing equal numbers of IP galaxies (jackknife errors).
+%The signal for the greater stellar mass bin is also shown excluding the COSMOS field (gray dashed line).
+%}
+%  \label{fig:normsig_zbins_massbins}
+%\end{figure}
+
+%\begin{figure}
+%  \epsscale{1.1}
+%  \epstrim{0.3in 0.1in 0.3in 0.4in}
+%  \fbox{\plotone{figures/normsigplot_byField}}
+%  \plotone{figures/normsigplot_byField}
+%  \caption{Normalized conformity signal for each field with bootstrap errors.
+%\todo{probably too busy; just have following figure?}
+%}
+%  \label{fig:normsig_fields}
+%\end{figure}
+
+%\begin{figure}
+%  \epsscale{1.1}
+%  \epstrim{0.2in 0.2in 0.4in 0.4in}
+%  \fbox{\plotone{figures/normsigplot_JKE_IPmatchFBF_PHI37_zbinsEqualHalves}}
+%  \plotone{figures/normsigplot_JKE_IPmatchFBF_PHI37_zbinsEqualHalves}
+%  \caption{Normalized conformity signal for three redshift bins containing equal numbers of IP galaxies.
+%}
+%  \label{fig:normsig_zbins}
+%\end{figure}
+
+%\begin{figure}
+%  \epsscale{1.1}
+%  \epstrim{0.2in 0.2in 0.4in 0.4in}
+%  \fbox{\plotone{figures/normsigplot_JKE_IPmatchFBF_PHI37_massbinsEqualHalves}}
+%  \plotone{figures/normsigplot_JKE_IPmatchFBF_PHI37_massbinsEqualHalves}
+%  \caption{Same as Figure~\ref{fig:normsig_zbins} except the IP samples have instead been divided into three stellar mass bins containing equal numbers of IP galaxies.
+%}
+%  \label{fig:normsig_massbins}
+%\end{figure}
+
+%\begin{figure}
+%  \epsscale{1.1}
+%  \epstrim{0.2in 0.2in 0.4in 0.4in}
+%  \fbox{\plotone{figures/normsigplot_JKE_IPmatchFBFnoCosmos_PHI37_allz}}
+%  \plotone{figures/normsigplot_JKE_IPmatchFBFnoCosmos_PHI37_allz}
+%  \caption{Same as Figure~\ref{fig:normsig_all} except the COSMOS field has been excluded.
+%}
+%  \label{fig:}
+%\end{figure}
+
+%\subsubsection{Redshift Bins}\label{sec:cosmos_zbins}
+
+%\begin{figure}
+%  \epsscale{1.1}
+%  \epstrim{0.2in 0.2in 0.4in 0.4in}
+%  \fbox{\plotone{figures/normsigplot_JKE_IPmatchFBFnoCosmos_PHI37_zbinsEqualThirds}}
+%  \plotone{figures/normsigplot_JKE_IPmatchFBFnoCosmos_PHI37_zbinsEqualThirds}
+%  \caption{Same as Figure~\ref{fig:normsig_zbins} except the COSMOS field has been excluded.
+%}
+%  \label{fig:}
+%\end{figure}
+
+%\begin{figure}
+%  \epsscale{1.1}
+%  \epstrim{0.4in 0.2in 0.4in 0.4in}
+%  \fbox{\plotone{figures/latefracplot_BSE_IPmatchFBF_COSMOS_PHI37_allz}}
+%  \plotone{figures/latefracplot_BSE_IPmatchFBF_COSMOS_PHI37_allz}
+%  \caption{Late-type neighbor fractions at $\Rproj \le 15$~Mpc for all late- (solid blue) and early-type (dashed red) IPs in the COSMOS field only.
+%}
+%  \label{fig:latefrac_COSMOS}
+%\end{figure}
+
+%\subsubsection{Stellar Mass Bins}\label{sec:cosmos_massbins}
+
+%\begin{figure}
+%  \epsscale{1.1}
+%  \plotone{figures/normsigplot_JKE_IPmatchFBFnoCosmos_PHI37_massThirdsEqualIP}
+%  \caption{
+%}
+%  \label{fig:}
+%\end{figure}

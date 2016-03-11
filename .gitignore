@@ -1,0 +1,10 @@
+*.log
+*.aux
+*.swp
+*.bbl
+*.dvi
+*.out
+/main.pdf
+/main.ps
+/main.synctex.gz
+/tables/archive

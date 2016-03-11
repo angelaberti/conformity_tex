@@ -1,0 +1,165 @@
+%!TEX root = ms2.tex
+
+
+
+
+
+\section{Discussion}\label{sec:discussion}
+We have used a large collection of multi-wavelength observations to probe the environmental dependance of different AGN samples. 
+In the following sections, we discuss the implications of these findings in context of the current AGN literature and the AGN and galaxy connection.
+First, in Section~\ref{sec:litdiscussion}, we discuss our findings relative to other multi-wavelength AGN studies.
+Following, in Section~\ref{sec:lambdadiscussion}, we address the effects of the intrinsic differences in the samples
+Finally, in Section~\ref{sec:environdiscussion}, we discuss the effects of AGN relative to inactive galaxies.
+
+
+
+
+
+\begin{figure*}
+  \epsscale{1.0}
+  % \epstrim{0.5in 0.6in 0.8in 1.in}
+  \plotone{figures/12_bias}
+  \caption{
+Comparison of the absolute bias as a function of redshift for the different mutli-wavelength selected samples.
+(Top-left panel) bias estimate for the \Xray sample (green square), \Radio sample (red square), and \Donley sample (blue square) presented in this work. 
+For all panels, we show the samples without the COSMOS field with light open markers and color matching each sample.
+Additionally, we include lines of constant dark-matter halo mass (\Mhalo{=}{11} - \Mhalo{=}{13.5}; black lines).
+(Top-right panel) literature comparison for for our redshift dependent \Xray samples.
+We show the low-redshift \Xray sample (green circle) and high-redshift \Xray sample (green diamond).
+Additionally we show \Xray samples from the literature which span a range of redshifts (left to right: \citet{Krumpe10}, \citet{Hickox09}, \citet{Yang06}, \citet{Gilli05}, \citet{Coil09}, \citet{Allevato11}, and \citet{Gilli09}).
+(Bottom-left panel) bias estimate for the high-luminosity \Radio sample (square), and low-luminosity \Radio sample (circle).
+Additionally we show \Radio samples from the literature which span a range of redshifts (left to right: \citet{Magliocchetti99}, \citet{Lindsay14a}, \citet{Wake08}, and \citet{Hickox09}).
+(Bottom-right panel) bias estimates for the \Donley sample (blue square), and \Assef sample (red square).
+We show the \Assef WISE obscured sub-sample (cross), and unobscured sub-sample (circle).
+The \Assef sample is a superset of the obscured and un-obscured subsamples.
+We show angular clustering clustering estimates of \citet{Donoso13} for obscured and unobscured sources as an open circle, and an open square.
+Additionally we show the \citet{Hickox09} and \citet{Gilli07} \IR sample with a grey diamond.
+}
+  \label{fig:bias}
+\end{figure*}
+
+\subsection{How do these results compare to others?}\label{sec:litdiscussion}
+We compare our results to others in the literature using the absolute bias parameter measured in the two-halo term, due to the degeneracy in the $\gamma$ and $r_0$ fit parameters.
+
+In the \Xray sample (Figure~\ref{fig:bias} top-left) we find that our results are generally consistent with the bulk of other measurements from other fields.  
+Including the COSMOS field systematically overestimate the absolute bias by n\% at these redshifts due to the over-density found in the field at $z\sim0.3$ and $z\sim0.7$.
+This matches the published clustering value in this field.
+Without the COSMOS field, we find similar results to \citet{Coil09} and \cite{Hickox09}.
+This is not surprising as we use a portion of the EGS similar to \citet{Coil09}.
+Together these results suggest that \Xray sources consistently are found in  
+\Mhalo{\sim}{12.5} to \Mhalo{\sim}{13} dark matter halos over a wide redshift range since $z\sim1.2$.
+
+The \Radio sample agrees with literature and generally shows a higher absolute-bias than the \Xray sample indicating a higher dark-matter halo mass of \medianpower{\mhalo}{\sim}{13.5}{\mhalounit}.
+The low-luminosity \Radio sample is high in value, but does not constrain the halo mass with significance due to the uncertainty in the measurement. 
+Like the \Xray sample we find that the COSMOS field drives the clustering of the \Radio sample; the absolute bias is less when excluding the COSMOS field and follows a similar systematic offset of $\sim N\%$ that is seen in the \Xray sample.
+The number of clustering estimates for \Radio is overall smaller, and our values match them well.
+
+Finally, the \IR samples match the literature values and suggest that the \IR samples reside in low-mass dark-matter halos (\Mhalo{\sim}{11.5}).
+While we present slightly different selection (e.g. \Donley, \Stern, $f_{24\um}$) the absolute bias are all consistent with these sources residing in low-mass dark-matter halos.
+Additionally, we do not agree with the angular clustering estimated values from \citet{Donoso13} for the obscured and unobscured sources; we do not find a correlation between the clustering strength and obscuration of the source.
+
+
+
+
+
+
+
+
+
+
+\begin{figure*}
+  \epsscale{1.0}
+  % \epstrim{0.5in 0.6in 0.8in 1.in}
+  \plotone{figures/13_lambdacompare}
+  \caption{ 
+Comparison of the specific accretion rate samples.
+Large left panel: specific accretion rate and mass limits.
+Middle panels: comparison of high $\lambda$ \Xray and \Donley samples.
+Right panels: comparison of low $\lambda$ \Xray and \Radio samples.
+We find that the \Donley sample is clustered like high specific accretion rate \Xray sources and the \Radio sample is clustered like low specific accretion rate \Xray sources.
+}
+  \label{fig:lambdacompare}
+\end{figure*}
+
+\subsection{Does clustering depend on specific accretion rate?}\label{sec:lambdadiscussion}
+In \citet{Mendez13}, we concluded that a significant difference in the \IR and \Xray samples was due to the large number of quiescent galaxies not identified by the \IR sample due to the 1.6\um stellar bump entering the mid-IR waveband.
+This difference limited the identified IR samples to be generally luminous AGN where the AGN light dominated the light from the galaxy.
+Combined with the high-mass AGN selection bias, this implies that the samples have different median accretion rate sources.
+Additionally we have now extended our sample to include \Radio sources, which probe lower specific-accretion rate sources \citep{Hickox09}.
+% These sources while also very massive, tends to be found with low X-ray luminosities for even high radio luminosities.
+
+Using the \Radio sample, and the \Donley sample with two specific-accretion rate sub-samples of the \Xray population will allow us to determine the significance of the clustering differences between the multi-wavelength samples.
+We remove all broad-line sources from this comparison as we require a stellar mass estimate for the \highlambda \Xray and \lowlambda \Xray samples.
+This does not cause a significant difference ($\sim1\sigma$) between the samples with or without the broad line sources.
+Of these sources we sub-divide the \Xray sample with a specific-accretion rate of \lambdavalue{=}{-2} and above a stellar-mass of \mass{=}{9.75}.
+This roughly separates the bulk of the X-ray detected \Radio sample and \Donley sample.
+We note that the left panel of Figure~\ref{fig:lambdacompare} only shows the subset of the \Radio sources and \Donley sources that are X-ray detected.
+Additionally both samples overlap in the specific-accretion rates, so this cut should be taken as a simple rough dividing-line comparison between the two specific-accretion rate extrema.
+
+We find that the relative bias between the \Radio and \lowlambda \Xray samples is less significant;
+The difference in the relative bias has gone down from 13\% ($1.1\sigma$) to 12\% ($0.9\sigma$).
+Additionally, we find that the relative bias between the \Donley and \highlambda \Xray samples is less significant; the relative bias has gone down from 53\% ($2.4\sigma$) to 21\% ($1.5\sigma$).
+Some of the difference in the significance is due to the limits on the number of sources for each comparison.
+In the figure, we also show the \nocosmos samples for each of the comparisons to show the systematic bias that the \texttt{COSMOS} raises the relative bias for this comparison.
+Removing the COSMOS field from the comparison lowers the relative bias difference between the samples to $\sim0.6\sigma$ for both the \highlambda and \lowlambda samples.
+
+
+\subsection{Are there environmental differences for AGN samples?}\label{sec:environdiscussion}
+Correlations between the AGN and host galaxy may prevent the actual estimate of the clustering strength of different samples relative to AGN properties.
+We find that the matched stellar mass, star-formation rate, and redshift control samples have similar clustering properties to each of the AGN samples at the $\sim2\sigma$ level.
+This suggests that the physical mechanism that is fueling and triggering the AGN correlates with environmental scales much smaller than the length scales that we can probe here (0.1 \hMpc), or are a sub-dominantly related to the mass of the dark matter halo.
+
+Additionally we can use the matched-galaxy control sample as an estimator of the differences in the underlying AGNs identified in each technique.
+Assuming to our limiting depths, the underlying AGNs are distributed similarly to our measured samples, we would expect that the different waveband clustering measurements should converge upon the control galaxy sample with large enough samples.
+This gives us a more accurate estimate of the predicted differences in the host galaxies due to underlying selection effects imposed by each selection technique.
+While this does not rule out correlations between AGN properties and the host galaxy, it puts an upper limit on the significance of the differences.
+% Comparing these matched-galaxy control samples to each other allows us to determine the systematic uncertainty due to differences in the selected hosts of these AGN.
+We find $\sim2-3\sigma$ differences between the control samples suggesting even with larger surveys the intrinsic differences of the host galaxies will limit the accuracy in measuring correlations between the clustering strength and AGN properties only. 
+
+
+
+
+
+% Combined with the similarities in the clustering between inactive and active galaxies indicates that the any measurable differences 
+
+
+% * Idea for Discussion section:
+% From Aird+12 there is only a small predicted differences in stellar mass for different luminosity samples. 
+% This is why we do not find a difference in the clustering strengths of these sources.
+% The differences are dominated by selected mass and possibly SFR differences in the samples.
+
+
+% * An idea for the discussion section:
+% So we are finding that in the two halo term that the clustering of these sources
+% appears to be higher for the X-ray sources as compared to the Donley sources this
+% tells us that the halos for the X-ray sources are larger than for the Donley sources
+% However the Donley sources tend to have stellar masses larger than a given X-ray source.
+% So for a given galaxy with a given stellar mass X-ray agn reside in larger halos.  thus 
+% it could be that Donley sources reside in smaller halos that are more efficient at 
+% forming stars and converting their gas into the AGN.
+
+
+% * Idea for the discussion section:
+% Get the mean number of AGN for a given halo for some mass as a function of specific accretion rate or possibly just luminosity.  Take this and determine what is the median contribution to the energy budget for galaxy groups.
+% This might limit the amount of possible energy that AGN feedback that simulators could be adding to their simulations.
+% I am guessing that there is a large enough range that this may not limit much.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

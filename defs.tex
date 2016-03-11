@@ -1,0 +1,193 @@
+% [Figures] ---------------------------------------------------------------
+\usepackage{epstopdf}
+%\usepackage[outdir=./figures/]{epstopdf}
+%\usepackage[outdir=/figures/]{epstopdf}
+
+% [Bibliography] ---------------------------------------------------------------
+\usepackage{natbib}
+\citestyle{aa} 
+% \bibliographystyle{apj} % official 
+\bibliographystyle{apjurl} % with nice links
+% \bibliographystyle{tony-apj} % from Alison
+
+% [Colors and the sort] --------------------------------------------------------
+\usepackage[usenames]{color}
+\definecolor{red}{rgb}{0.75,0,0}
+\definecolor{green}{rgb}{0,0.5,0}
+\definecolor{blue}{rgb}{0,0,0.75}
+\usepackage[ colorlinks=true, % false for boxed links
+             urlcolor=blue,
+             filecolor=blue,
+             linkcolor=red,
+             citecolor=blue,
+             pdftitle={pdf title},
+             pdfauthor={pdf author},
+             pagebackref, % Add for citation links
+             % pdfpagemode=UseOutlines,
+             % backref=page,
+             bookmarks,
+             bookmarksopen=true]{hyperref}
+
+% [Nice Things] ----------------------------------------------------------------
+% \usepackage[sc]{mathpazo} % Better Font. [Looks nice, but not using.]
+% \usepackage{lmodern} % Nice PS Text Font. [Not needed]
+\usepackage{xspace}    % space after new command
+\usepackage{microtype} % Cleans up spacing.
+\usepackage{amsmath}  % Some nice math things
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{booktabs}
+
+% \usepackage[textsize=small,
+%             textwidth=0.5in,
+%             % disable,
+%             backgroundcolor=lightgray]{todonotes} % Fancy ToDo Setup.
+% \newcommand{\itodo}[1]{\todo[inline]{#1}}
+% \newcommand{\comment}[1]{\todo[inline,
+%                                color=white,
+%                                bordercolor=blue!50!white]{#1} }
+% \newcommand{\response}[1]{\todo[inline,
+%                                color=white,
+%                                bordercolor=green!50!white]{#1} }
+\newcommand{\todo}[1]{\mend{#1}}
+\newcommand{\itodo}[1]{\mend{#1}}
+
+\usepackage[normalem]{ulem}
+\newcommand\redline{\bgroup\markoverwith{\textcolor{red}{\rule[0.5ex]{2pt}{0.4pt}}}\ULon}
+\newcommand{\remove}[1]{\redline{#1}}
+
+\usepackage{makecell} % enables multiple colhead lines.
+\usepackage{rotating} %[2011.09.05] rotate the deluxetable. \begin{turnpage}
+                      % also for rotated titles in the tables
+
+% Commands ---------------------------------------------------------------------
+\newcommand{\totalgals}{60,102\xspace}
+\newcommand{\Rproj}{\ensuremath{\mathcal{R}_{\text{proj}}}}
+
+\newcommand{\chg}[1]{\textbf{#1}}
+\newcommand{\mend}[1]{ \textbf{[#1]} }
+
+\newcommand{\um}{\ensuremath{\mu\mathrm{m}}\xspace}
+\newcommand{\uJy}{\ensuremath{\mu\mathrm{Jy}}\xspace}
+
+% IRAC Depths:
+% \newcommand{\swire}{{\tt SWIRE}}
+% \newcommand{\cosmos}{{\tt COSMOS}}
+% \newcommand{\ecdfs}{{\tt ECDFS}}
+% \newcommand{\cdfs}{{\tt CDFS}}
+% \newcommand{\goods}{{\tt GOODS}}
+% \newcommand{\All}{{\tt All}} % for the contamination plot
+% \newcommand{\COSMOSA}{{\tt COSMOS$_{\tt Shallow}$}}
+% \newcommand{\ESONE}{{\tt ES1}}
+% \newcommand{\XMM}{{\tt XMM}}
+
+\newcommand{\Xray}{{X-ray AGN}\xspace}
+\newcommand{\IR}{{IR-AGN}\xspace}
+\newcommand{\WISE}{{WISE IR-AGN}\xspace}
+\newcommand{\Radio}{{radio AGN}\xspace}
+\newcommand{\Stern}{{Stern et al. \IR}\xspace}
+\newcommand{\Donley}{{Donley et al. \IR}\xspace}
+\newcommand{\Assef}{{Assef et al. \IR}\xspace}
+\newcommand{\Mateos}{{Assef et al. \IR}\xspace}
+
+\newcommand{\Spitzer}{\textit{Spitzer}\xspace}
+\newcommand{\Chandra}{\textit{Chandra}\xspace}
+\newcommand{\XMM}{\textit{XMM-Newton}\xspace}
+\newcommand{\ergscm}{\ensuremath{\mathrm{erg\;s^{-1} cm^{-2}}}\xspace}
+\newcommand{\cmsq}{\ensuremath{\mathrm{cm}^{-2}}\xspace}
+\newcommand{\ergs}{\ensuremath{\mathrm{erg\;s^{-1}}}}
+\newcommand{\wattshz}{\ensuremath{\mathrm{Watts\;Hz^{-1}}}}
+\newcommand{\degrees}{$^{\circ}$}
+\newcommand{\degsq}{\ensuremath{\mathrm{deg}^2}}
+% \newcommand{\arcsecsq}{\ensuremath{\mathrm{arcsec}^2}}
+\newcommand{\msun}{\mathcal{M}_{\sun}}
+\newcommand{\signorm}{\ensuremath{\xi_{\textrm{norm}}}}
+
+\newcommand{\fx}[2]{\ensuremath{f_{X}\, {#1}\, {10}^{#2}}\,\ergscm}
+\newcommand{\fxx}[2]{\ensuremath{f_{X}\sim{#1}\times{10}^{#2}}\,\ergscm}
+\newcommand{\fhard}[3]{$f_{\mathrm{{#1}keV}}\sim{#2}\times{10^{#3}}$~\ergscm}
+\newcommand{\LX}{\ensuremath{L_{X}}}
+\newcommand{\Lx}[2]{$\LX\;{#1}\;{10}^{#2}$\;\ergs}
+\newcommand{\fir}[2]{$f_{5.8\um} {#1} {#2}$~\uJy}
+\newcommand{\LIR}{\ensuremath{{\nu}L_{3.6\um}}}
+\newcommand{\Lir}[2]{$\LIR {#1} {10}^{#2}$~\ergs}
+\newcommand{\PR}[2]{\ensuremath{P_\mathrm{1.4Ghz} {#1} {10}^{#2}}~\wattshz}
+% \newcommand{\PR}[2]{\wattshz}
+
+\newcommand{\Lratio}{\LIR/\LX}%${\nu}L_{3.6\um}/L_{X}$}
+\newcommand{\Lxratio}{$L_X/L_{Edd}$}%$L_{X}/L_{Edd}$}
+\newcommand{\nperdegsq}{deg$^{-2}$}
+
+\newcommand{\mstar}{\ensuremath{\mathcal{M}_*}}
+\newcommand{\msolar}{\ensuremath{\mathcal{M}_{\odot}}}
+\newcommand{\mlim}{\ensuremath{\mathcal{M_{\text{lim}}}}}
+\newcommand{\mcomp}{\ensuremath{\mathcal{M_{\text{comp}}}}}
+\newcommand{\mIP}{\ensuremath{\mathcal{M_{\text{IP}}}}}
+\newcommand{\mMoustakas}{\ensuremath{\mathcal{M}_{\text{M13}}}}
+\newcommand{\kms}{km~s$^{-1}$\xspace}
+
+\newcommand{\mrange}[2]{\ensuremath{10^{#1}\,<\,\mstar/\msun\,<\,10^{#2}}}
+
+\newcommand{\Nh}[2]{$N_H {#1} 10^{#2}$~\cmsq}
+\newcommand{\LogNLogS}{Log\,\textit{N}\ $-$ Log\,\textit{S}}
+
+\newcommand{\specific}{\ensuremath{\lambda}}
+\newcommand{\SpecificP}[2]{\ensuremath{\specific\ {#1}\ {#2}\%}}
+
+%%% correlation stuff
+% \renewcommand{\wp}{\ensuremath{w_p}}
+% \newcommand{\wprp}{\ensuremath{w_p(r_p)}}
+\newcommand{\xisp}{\ensuremath{\xi(r_p,\,\pi)}}
+\newcommand{\pimax}{\ensuremath{\pi_\textrm{max}}}
+\newcommand{\hMpc}{\ensuremath{\,h^{-1}\, \textrm{Mpc}}}
+\newcommand{\wAA}{\ensuremath{w_\textrm{AA}}}
+\newcommand{\wAG}{\ensuremath{w_\textrm{AG}}}
+\newcommand{\wGG}{\ensuremath{w_\textrm{GG}}}
+
+\newcommand{\iSEDfit}{\texttt{iSEDfit}\xspace}
+
+\newcommand{\maketmp}[1]{\expandafter\MakeUppercase\expandafter{#1}}
+\newcommand{\makecap}[1]{\texorpdfstring{\maketmp{#1}}}
+
+\newcommand{\massunit}{\ensuremath{\msun}\xspace}
+\newcommand{\uJybeam}{\ensuremath{\uJy\,\mathrm{beam}^{-1}}\xspace}
+%\newcommand{\mass}[2]{\ensuremath{\mstar\,{#1}\,{10}^{#2}\,\massunit}}
+\newcommand{\mass}{\ensuremath{\mathcal{M}}\xspace}
+\newcommand{\median}[2]{\ensuremath{\langle{#1}_{#2}\rangle}\xspace}
+\newcommand{\medianvalue}[3]{\ensuremath{\langle#1\rangle\,#2\,#3}\xspace}
+\newcommand{\medianpower}[4]{\ensuremath{\langle#1\rangle\,#2\,10^{#3}\,#4}\xspace}
+\newcommand{\runit}{\ensuremath{\textrm{h}^{-1}~\textrm{Mpc}}}
+
+\newcommand{\mhalo}{\ensuremath{M_\textrm{halo}}\xspace}
+\newcommand{\mhalounit}{\ensuremath{\textrm{h}^{-1}\,\msun}\xspace}
+\newcommand{\Mhalo}[2]{\ensuremath{\mhalo\,{#1}\,10^{#2}\,\mhalounit}\xspace}
+
+\newcommand{\lambdaunit}{\ensuremath{\ergs\,\msun^{-1}}}
+\newcommand{\lambdavalue}[2]{\ensuremath{\specific\,{#1}\,{10}^{#2}\,\lambdaunit}\xspace}
+
+\newcommand{\highlambda}{High-\ensuremath{\lambda}\xspace}
+\newcommand{\lowlambda}{Low-\ensuremath{\lambda}\xspace}
+\newcommand{\nocosmos}{\texttt{[no COSMOS]}\xspace}
+\newcommand{\mJy}{\ensuremath{\mathrm{mJy}}\xspace}
+\newcommand{\hKpc}{\ensuremath{\,h^{-1}\, \textrm{Kpc}}}
+\newcommand{\chandra}{\textit{Chandra}}
+\newcommand{\xmm}{\textit{XMM-Newton}}
+\newcommand{\mbh}{\ensuremath{\mathcal{M}_\mathrm{BH}}\xspace}
+\newcommand{\sfrunit}{\ensuremath{\msun\,\textrm{yr}^{-1}}}
+
+\newcommand{\ssfr}{\ensuremath{\mathrm{sSFR}}\xspace}
+\newcommand{\MLx}[1]{$\median{L}{X}\;{\sim}\;{10}^{#1}$\;\ergs}
+\newcommand{\galex}{\emph{GALEX} }
+
+\newcommand{\arcsecsq}{\ensuremath{\mathrm{arcsec}^2}\xspace}
+
+\renewcommand{\wp}{\ensuremath{w_p}\xspace}
+\newcommand{\wprp}{\ensuremath{w_p(r_p)}\xspace}
+\newcommand{\ssfrunit}{\ensuremath{\mathrm{yr}^{-1}}}
+
+\newcommand{\zsim}[1]{\ensuremath{z\sim{#1}\xspace}}
+\newcommand{\zmax}{\ensuremath{z_{\text{max}}}}
+
+\newcommand{\xir}{\ensuremath{\xi(r)}\xspace}
+\newcommand{\rp}{\ensuremath{r_p}\xspace}
+\newcommand{\rpvalue}[2]{\ensuremath{\rp\,{#1}\,{#2}\hMpc}\xspace}
