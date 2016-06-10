@@ -1,36 +1,47 @@
-\begin{deluxetable}{lrrr}
-\tabletypesize{large}
-\tablecaption{Signifcance of 1-halo conformity signal ($0<\Rproj<1$~Mpc) for individual fields.
-\label{table:signal_fields}}
+\setlength{\tabcolsep}{0.05in}
+\begin{deluxetable}{lrrrr}
+%\tabletypesize{large}
+\tablecaption{Signifcance of 1-halo term of $\signorm$ for individual fields computed using bootstrap errors (jackknife errors for the full sample).
+\label{table:signal_fields}
+}
 \tablewidth{0pt}
 \tablehead{
-\colhead{Field} & \colhead{$N_{\textrm{SF-IP}}$} & \colhead{$N_{\textrm{Q-IP}}$} & \colhead{$\sigma_{\textrm{BS}}$} \\
+\colhead{Field} & \colhead{$N_{\textrm{IP}}$\tablenotemark{a}} & \colhead{$N_{\textrm{SF-IP}}$\tablenotemark{b}} & \colhead{$N_{\textrm{Q-IP}}$} & \colhead{$\sigmaBS$\tablenotemark{c}}
 }
 \startdata
 CDFS &
+$2,837$ &
 $1,139$ &
 $1,698$ &
 $4.0$ \\
 COSMOS &
+$1,830$ &
 $731$ &
 $1,099$ &
 $3.1$ \\
 ES1 &
+$1,011$ &
 $390$ &
 $621$ &
 $5.9$ \\
 XMM-CFHTLS &
+$3,222$ &
 $1,325$ &
 $1,897$ &
 $3.4$ \\
 XMM-SXDS &
+$1,482$ &
 $600$ &
 $882$ &
 $0.2$ \\
-\cline{1-4} \\
-Full Sample ($\sigma_{\textrm{JK}}$) &
+\cline{1-5} \\
+Full Sample\tablenotemark{c} &
+$10,392$ &
 $4,185$ &
 $6,207$ &
 $3.6$ \\
 \enddata
+\tablenotetext{a}{Total number of unique IPs.}
+\tablenotetext{b}{Number of unique SF IPs.}
+\tablenotetext{c}{For the full sample the quoted significance is computed using jackknife errors.}
 \end{deluxetable}

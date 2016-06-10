@@ -1,0 +1,240 @@
+%!TEX root = main.tex
+
+\section{Data}\label{sec:data}
+
+%low-resolution ($\lambda/\Delta\lambda \sim 40$) spectra for $\sim 300,000$ objects
+%targeted $80\%$ of galaxies in these fields with $i < 22$
+%IMACS instrument \citep{Bigelow03} on Magellan-I Baade 6.5 m telescope to observe $\sim 2,500$ objects at once using a slitmask that covered 0.18 $\degsq$
+%statistically-complete sample of $\sim120,000$ spectroscopic redshifts to $i_{\mathrm{AB}}\sim23.5$
+%redshifts are derived by fitting a large suite of galaxy, broad-line AGN, and stellar spectral templates to the low-resolution spectra and optical photometry \citep[see][for details]{Cool13}
+%objects are classified as galaxies, broad-line AGN or stars depending on the best $\chi^2$ template fit
+%redshift precision is ($\sigma_z/(1+z) \sim 0.5\%$)
+%low catastrophic outlier rate: less than $3\%$ ($\Delta{z}/(1+z) \ge 0.03$)
+%further details of the survey design, targeting, and data see \citet{Coil11}
+%further details of the data reduction, redshift confidence, and completeness see \citet{Cool13}
+
+\subsection{PRIMUS}\label{sec:PRIMUS}
+ 
+The PRIsm MUlti-Object Survey (PRIMUS) is the largest faint galaxy redshift survey completed to date.
+The survey was conducted with the IMACS spectrograph (Bigelow \& Dressler 2003) on the Magellan I Baade 6.5-meter telescope at Las Campanas Observatory, using slitmasks and low-dispersion prism.
+The design allowed for $\sim~2000$ objects per slitmask to be observed simultaneously with a spectral resolution of ${\lambda/\Delta\lambda \sim 40}$, in a field of view of $\sim$0.2 deg$^2$.
+Objects were targeted to a maximum depth of ${i \ge 23}$, and typically two slitmasks were observed per pointing on the sky.  
+PRIMUS obtained robust redshifts $({Q \ge 3}$, see Coil et al.~(2011), ADD REFERENCE:  Cool et al. 2013) for $\sim120,000$ objects at ${z \sim 0\textendash1.2}$ with a redshift precision of ${\sigma_{z}/(1 + z) \sim 0.005}$.
+
+The total survey area of PRIMUS is $9.1~\degsq$ and encompasses seven distinct science fields: the Chandra Deep Field South-SWIRE field (CDFS, {\bf GIVE REFERENCE}), the 02hr and 23hr DEEP2 fields {\bf GIVE REFERENCE - Newman et al. 2013 ApJS 208 5}, the COSMOS field (Scoville et al.~2007), the European Large Area ISO Survey-South 1 field (ES1; Oliver et al.~2000), the Deep Lens Survey (DLS; Wittman et al.~2002) F5 field, and two spatially adjacent subfields of the XMM-Large Scale Structure Survey field (XMM-LSS; Pierre et al.~2004). The XMM subfields are the Subaru/XMM-Newton DEEP Survey field (XMM-SXDS; Furusawa et al.~2008) and the Canada-France-Hawaii Telescope Legacy Survey (CFHTLS) field (XMM-CFHTLS).
+These two fields are adjacent but are treated separately in our analysis 
+as they were targeted by PRIMUS using different photometric catalogs (see Coil et al.~(2011) for details).
+%PRIMUS also includes an additional four calibration fields that had prior, high resolution spectroscopic redshifts.
+Full details of the survey design, targeting, and data summary can be found in Coil et al.~(2011), white details the of data reduction, redshift fitting, precision, and survey completeness are available in Cool et al.~(2013).
+
+Here we use the PRIMUS fields that have deep multi-wavelength ultraviolet (UV) imaging from the Galaxy Evolution Explorer (GALEX; Martin et al.~2005), mid-infrared imaging from the Spitzer Space Telescope (Werner at al.~2004) Infrared Array Camera (IRAC; Fazio et al.~2004), and optical and near-IR imaging from various ground-based surveys.
+They include the CDFS, COSMOS, ES1, XMM-CFHTLS, and XMM-SXDS fields, covering ${\sim 5.5~\degsq}$ on the sky.
+
+\begin{figure*}
+  \centering
+%  \epsscale{1.0}
+%  \epstrim{0.0in 0.5in 0.2in 0.6in}
+%  \fbox{\plotone{figures/cone_diagrams}}
+%  \plotone{figures/cone_diagrams.eps}
+%  \fbox{\includegraphics[width=0.9\textwidth,natwidth=600,trim={0.2in 0.5in 0.4in 0.6in},clip]{figures/cone_diagrams.png}}
+  \includegraphics[width=0.9\textwidth,natwidth=600,trim={0.2in 0.5in 0.4in 0.6in},clip]{figures/cone_diagrams.png}
+  \caption{Redshift space distributions of PRIMUS galaxies as a function of physical distance along the line-of-sight and right ascension (RA), relative to the median RA of the field.
+%From top to bottom the corresponding fields are CDFS, COSMOS, ES1, XMM-CFHTLS, and XMM-SXDS.
+Only galaxies with robust redshifts ${(Q \ge 3)}$ are shown.
+Star-forming galaxies are shown in blue and quiescent galaxies in red (see~\S\ref{sec:SFQ}). Large scale differences in the observed density of galaxies, for example, as a function of RA, reflect the number of slitmasks and targeting density.
+}
+  \label{fig:cone_diagrams}
+\end{figure*}
+
+\subsection{Full Sample and Targeting Weights}\label{sec:targ_weight}
+ 
+{\bf(Check that this is all true:)}
+
+Objects in PRIMUS are classified as galaxies, stars, or broad-line active galactic nuclei by fitting the low-resolution spectra and multi-wavelength photometry for each source with an empirical library of templates.  The best-fit template defines both the redshift and the type of source.  We exclude AGN from this study and keep only those objects defined as galaxies with robust redshifts ($Q\ge 3$) in the redshift range $0.2 < z < 1.0$.
+
+We also only keep galaxies with well defined targeting weights (these are termed ``primary'' galaxies in Coil et al. 2011; we do not use that naming here, to avoid confusion with our isolated primary sample defined below).  
+These galaxies have a well understood spatial and targeting selection function, from which a statistically complete galaxy sample can be created.
+Galaxies are sufficiently clustered in the plane of the sky to the PRIMUS flux limit such that even two slitmasks per pointing can not target every galaxy, as the spectra would overlap on the detector.  
+Therefore, each PRIMUS target was given a density-dependent selection weight that accounted for how many other objects would spectroscopically collide with the target.
+Slitmasks were designed to avoid overlapping spectra (``slit collisions'') by selecting a subsample of targets that would not overlap, using the density-dependent weights.  
+{\bf(You don't mention the magnitude dependent weights here - should briefly mention those as well.  See how other PRIMUS papers talk about these weights.)}
+Incompleteness in the observations can then be corrected by considering both the density and magnitude depedent targeting weight of each object.
+{\bf(Also check to see if the weights you are using include a completeness correction - see Moustakas paper)}
+Below we test the sensitivity of our results to these targeting and completeness weights.
+
+The full sample used here includes ${\sim 60,000}$ galaxies with robust 
+redshifts between $0.2 < z < 1.0$ and well understood selection weights, in
+the five fields discussed above. 
+
+
+\subsection{Stellar Mass and SFR Measurements}\label{sec:SFR}
+ 
+Stellar masses and star formation rates (SFRs) are estimated for galaxies using \iSEDfit, a suite of routines that uses galaxy redshifts and photometry to compute the statistical likelihood of a large ensemble of model spectral energy distributions (SEDs). The full details of \iSEDfit are available in Moustakas et al.~(2013).
+{\bf(Have to give more details here - see what other PRIMUS papers do.)}
+
+%\section{Methods}\label{sec:methods}
+
+\subsection{Identifying Star-Forming and Quiescent Galaxies}\label{sec:SFQ}
+
+We divide our sample into star-forming and quiescent galaxies based on each 
+galaxy's position in the SFR - stellar mass plane. 
+%relative to the star formation (SF) sequence (Noeske et al.~2007), the correlation between SFR and stellar mass exhibited by star-forming galaxies to at least ${z \sim 2}$ (Oliver et al.~2010; Karim et al.~2011 (sources from Moustakas et al.~2013)).
+Figure~\ref{fig:SFR_vs_mass} shows SFR versus stellar mass in six redshift bins from ${z=0.2\textendash1}$, for the PRIMUS galaxy sample.
+The dashed line (Eq.~\ref{eq:SFR}) in each panel traces the minimum of the bimodal galaxy distribution in that bin and is given by the following linear relation:
+
+\begin{equation}\label{eq:SFR}
+\log\,({\rm SFR}) = -1.29 + 0.65\,\log\,(\mass - 10) + 1.33\,(z - 0.1)
+\end{equation}
+
+\noindent where SFR has units of $\sfrunit$ and $\mass$ has units of $\msun$.
+The slope of this line is defined by the slope of the star forming main sequence  (Noeske et al.~2007) as measured in the PRIMUS dataset using iSEDfit SFR and stellar mass estimates. 
+Each galaxy is classified as star-forming or quiescent based on whether it lies above or below the cut defined by Equation~\ref{eq:SFR}, evaluated at the redshift of the galaxy.
+
+
+\begin{figure}
+  \centering
+%  \fbox{\includegraphics[width=\linewidth,natwidth=600,trim={0.1in 0.1in 0.2in 0.6in},clip]{figures/SFR_vs_mass}}
+  \includegraphics[width=\linewidth,natwidth=600,trim={0.1in 0.1in 0.2in 0.6in},clip]{figures/SFR_vs_mass}
+%  \epsscale{1.1}
+%  \epstrim{0.1in 0.1in 0.2in 0.6in}
+%  \fbox{\plotone{figures/SFR_vs_mass}}
+%  \plotone{figures/SFR_vs_mass}
+  \caption{Star formation rate (SFR) versus stellar mass for PRIMUS galaxies in six redshift bins from ${z=0.2\textendash1}$.
+Galaxies in our sample are classified as star-forming or quiescent according to whether they lie above or below the dashed line, respectively.
+This line runs parallel to the star forming main sequence and traces the minimum in the galaxy SFR bimodality and evolves with redshift according to Equation~\ref{eq:SFR}.
+}
+  \label{fig:SFR_vs_mass}
+\end{figure}
+
+
+\subsection{Isolated Primary Sample}\label{sec:IPsample}
+
+In order to measure the galactic conformity signal, we must first identify 
+isolated galaxies around which to search for the signal.  We follow 
+Kauffmann et al.~2013, who in SDSS defined ``isolated primary'' (IP) galaxies
+as {\bf(give the details of how Kauffmman did it here for SDSS.)}
+Following Kauffmann et al.~(2013), in PRIMUS any galaxy in the full sample 
+(defined above) is considered an isolated primary (IP) candidate if there 
+are no other galaxies 
+(i) within a projected physical distance of 500~kpc from the IP candidate,
+(ii) within ${\pm 2.0\,\sigma_{z}\,(1 + z_{\rm IP})}$ in redshift space from 
+the IP candidate (this includes as many true neighbors as possible while 
+simultaneously minimizing interlopers and integrates over peculiar velocities),
+ and
+(iii) with stellar mass greater than half the stellar mass of the IP candidate.
+Additionally, IPs can be neighbors of other IPs, and all galaxies can be a neighbor of multiple IPs. 
+
+It is possible for galaxies near the edge of the survey area to be incorrectly classified as isolated if they have a sufficiently massive neighbor within a projected physical distance of 500~kpc that lies outside the survey area. This could lead to contamination of our IP samples.
+To test for this potential effect we visually inspected the distribution of IPs near the survey edges and concluded that false detections near edges do not significantly impact our IP sample, in that the spatial distribution of IPs does not rise substantially at the survey edges. 
+
+
+\subsubsection{Stellar Mass Completeness Limits}\label{sec:mass_compare}
+
+Because PRIMUS is a flux limited survey targeted in the $i$ band, galaxies with higher SFRs (i.e.~bluer galaxies) can be more easily detected at lower stellar mass
+than galaxies with lower SFR (i.e.~redder galaxies).
+This introduces a bias towards star forming galaxies in the PRIMUS sample at 
+lower stellar masses.
+To account for this bias we define a stellar mass limit above which all galaxies can be detected, regardless of their SFR.
+This stellar mass completeness limit is a function of redshift, and also varies slightly between fields (due to the different photometry used for targeting in each field).
+Details of the calculation of PRIMUS mass completeness limits can be found in Moustakas et al.~(2013).
+{\bf(give the relevant details here - the limits are defined such that 90? 95? percent of galaxies above that limit would be detected?  can see how other PRIMUS papers briefly describe this limit.)}
+
+In addition to the isolation criteria described above, all IP candidates must have stellar masses above the stellar mass completeness threshold in that field 
+at the redshift of the galaxy. 
+Of the 60,071 galaxies in our full sample, 14,888 star-forming and 6,847 quiescent galaxies meet the isolation and stellar mass completeness criteria to be IP candidates.
+{\bf(why are these still ``candidates'' and not just IPs?)}
+
+
+\subsubsection{Matching Stellar Mass and Redshift}\label{sec:IPsample_matching}
+
+While our star-forming and quiescent IP candidate populations are statistically complete (after applying the targeting and completeness weights), even above the stellar mass completeness limits the median stellar masses and redshifts of the two populations differ, as the stellar mass functions of star-forming and quiescent galaxies are different.
+Our star-forming and quiescent IP candidate populations have median log stellar mass of 10.44 and 10.86 {\bf(give units here)}, respectively, and median redshifts of 0.55 and 0.60.
+
+As discussed below, to compare the late-type fraction of neighbors around star-forming and quiescent IP galaxies we require the star-forming and quiescent IP samples to have the same stellar mass and redshift distributions.
+To obtain these ``matched'' IP samples, we first apply to our IP candidate samples an {\it upper} stellar mass cut derived from the PRIMUS stellar mass function (SMF, denoted as $\Phi$) for star-forming galaxies (Moustakas et al.~2013).
+This is required as there are fewer star-forming galaxies at high stellar mass 
+(log $M>11$ {\bf(give units)}) than quiescent galaxies. Therefore the high 
+mass end of the star-forming galaxy SMF defines the limit of our matched IP
+samples.  
+Specifically, we eliminate all IP candidates (both star-forming and quiescent) with stellar masses greater than the stellar mass at which ${\log\,(\Phi \,/\, 10^{-4}\,\text{Mpc}^{-3}\,\text{dex}^{-1}) \le -3.7}$, interpolated at the redshift of each galaxy.
+These upper mass limits are listed in Table~\ref{table:SMFlimit}.
+
+\input{tables/SMFlimit}
+{\bf(in the table clarify that these are matched IP upper stellar mass limits)}
+
+We then create a two-dimensional histogram of the stellar mass and redshift distribution of the remaining quiescent IP candidate population, in bins of {\bf(??)} in stellar mass and {\bf(??)} in redshift.
+For each of our five fields, in each bin we randomly select with replacement the same number of star-forming IP candidates as there are quiescent IPs.
+This selection is done separately in each field to account for variations in the stellar mass and redshift distributions of the IP candidate populations in each field.
+Our final matched IP sample contains $6,197$ unique quiescent and $4,185$ unique star-forming IPs.
+Each star-forming IP is assigned a weight equal to the number of times it was randomly selected while matching the distribution of the quiescent IP sample.
+The sum of all star-forming IP weights therefore equals the total number of unique quiescent IPs.
+
+Figure~\ref{fig:IPsample_matched} shows the stellar mass  and redshift distributions of all star-forming and quiescent galaxies in our full sample, 
+as well as the stellar mass and redshift distributions of our final ``matched'' IP sample.
+Figure~\ref{fig:IPhist_latefrac_vs_z} shows the redshift distributions of all star-forming (solid blue line) and quiescent (dashed red line) IPs, and the late-type fraction of all PRIMUS galaxies in our full sample as a function of redshift.
+{\bf(this figure is before ``matching'', though, yes?  so this is the distribution of the candidate IPs?  this should probably come before the previous figure and be discussed in the text before the matching is done)}
+
+\begin{figure}
+  \epsscale{1.1}
+  \epstrim{0.6in 0.2in 0.2in 0.4in}
+%  \fbox{\plotone{figures/matchedSamplePlot_allFields}}
+  \plotone{figures/matchedSamplePlot_allFields}
+  \caption{Stellar mass and redshift distribution for all star-forming (blue contours) and quiescent (red contours) galaxies in the IP candidate sample. 
+Gray shaded contours show the distribution for the final ``matched'' star-forming and quiescent IP samples that have the same stellar mass and redshift distributions.
+}
+  \label{fig:IPsample_matched}
+\end{figure}
+
+\begin{figure}
+  \epsscale{1.1}
+  \epstrim{0.1in 0.1in 0.5in 0.8in}
+%  \fbox{\plotone{figures/IPhist_latefrac_vs_z}}
+  \plotone{figures/IPhist_latefrac_vs_z}
+  \caption{Top panel: Redshift histograms of all star-forming (blue) and quiescent (red) candidate IPs.
+Bottom panel: Late-type fraction of all PRIMUS galaxies in our full sample as a function of redshift. {\bf(is this for all galaxies or all candidate IPs? clarify)}
+}
+  \label{fig:IPhist_latefrac_vs_z}
+\end{figure}
+
+%FIELD	MAX WGT	weight fraction = 1
+%cdfs		6	0.658472
+%XMM-CFHTLS	7	0.691321
+%cosmos		6	0.651163
+%es1		7	0.623077
+%xmm-sxds	9	0.676667
+
+
+{\bf(this should be moved to the results section and combined with section 3.1:)}
+The importance of matching both the stellar mass and redshift distributions of our IP sample is illustrated in Figure~\ref{fig:IPsample_compare},
+which shows how the late-type fractions of neighbors around star-forming and quiescent IPs differ when different IP samples are used.
+Figure~\ref{fig:IPsample_compare} plots the fraction of neighbors of star-forming and quiescent IPs that are late-type as a function of projected distance from the IP in 1~Mpc annuli out to 15~Mpc for four different IP samples.
+%
+In panel (a) all IP candidates above the M13 mass completeness limit (\S\ref{sec:mass_compare}) are included.
+Here the median stellar mass of the quiescent IP population is 0.42~dex greater than that of the star-forming IP population, and the median redshift is greater by 0.05.
+This difference in stellar mass distribution means that star-forming IPs are preferentially located in a region of Figure~\ref{fig:IPsample_matched} where the PRIMUS sample of early-type galaxies is incomplete, causing us to overestimate the neighbor late-type fraction for star-forming IPs (at all projected distances).
+The result is a relatively fixed offset between the solid and dashed lines in Figure~\ref{fig:IPsample_compare}(b) that persists to the largest projected distances we can measure with PRIMUS (we show to 15 Mpc, but can go to roughly double that before edge effects take over), mimicking a conformity signal.
+%
+In panel (b) we select star-forming and quiescent IP samples with matched redshift distributions using the method described in \S\ref{sec:IPsample_matching}.
+This reduces the median stellar mass difference between the IP samples to 0.3~dex, although a smaller fixed offset remains at all projected distances.
+%
+In panel (c) we select star-forming and quiescent IP samples with matched stellar mass distributions, resulting in a star-forming IP sample with a higher median redshift than that of the quiescent IP sample.
+In this case the systematic bias mimics the opposite of a conformity signal; the solid line moves closer to the dashed line at all projected distances, actually dropping below it at $>5$~Mpc.
+%
+Finally, panel (d) shows results for our matched stellar mass and matched redshift IP sample.
+Failure to control for one or both of stellar mass and redshift introduces bias into the relative neighbor late-type fractions of star-forming and quiescent IPs.
+Only by matching both the stellar mass and redshift distributions of our star-forming and quiescent IP samples do we eliminate the systematic bias in neighbor late-type fraction measurements that could masquerade as a conformity signal.
+
+\begin{figure*}
+  \epsscale{1.0}
+  \epstrim{0.1in 0.3in 0.4in 0.8in}
+%  \fbox{\plotone{figures/unmatchedIPsampleCompare}}
+  \plotone{figures/unmatchedIPsampleCompare}
+  \caption{Neighbor late-type fractions to ${\Rproj<15}$~Mpc for star-forming and quiescent IPs for four different IP samples: 
+(a)~all IP candidates above the M13 mass completeness limit (\S\ref{sec:mass_compare});
+(b)~matched redshift distribution only;
+(c)~matched stellar mass distribution only;
+(d)~matched stellar mass and redshift distribution.
+The median redshift and stellar mass of both IP samples are also shown in each panel.
+}
+  \label{fig:IPsample_compare}
+\end{figure*}

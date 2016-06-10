@@ -4,6 +4,9 @@
 *.bbl
 *.dvi
 *.out
+*.blg
+*.brf
+/figures/*.pdf
 /main.pdf
 /main.ps
 /main.synctex.gz

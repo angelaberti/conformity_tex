@@ -6,8 +6,8 @@
 % [Bibliography] ---------------------------------------------------------------
 \usepackage{natbib}
 \citestyle{aa} 
-% \bibliographystyle{apj} % official 
-\bibliographystyle{apjurl} % with nice links
+\bibliographystyle{apj} % official 
+% \bibliographystyle{apjurl} % with nice links
 % \bibliographystyle{tony-apj} % from Alison
 
 % [Colors and the sort] --------------------------------------------------------
@@ -98,10 +98,11 @@
 \newcommand{\ergs}{\ensuremath{\mathrm{erg\;s^{-1}}}}
 \newcommand{\wattshz}{\ensuremath{\mathrm{Watts\;Hz^{-1}}}}
 \newcommand{\degrees}{$^{\circ}$}
-\newcommand{\degsq}{\ensuremath{\mathrm{deg}^2}}
+\newcommand{\degsq}{\ensuremath{\mathrm{deg}^2}\xspace}
 % \newcommand{\arcsecsq}{\ensuremath{\mathrm{arcsec}^2}}
-\newcommand{\msun}{\mathcal{M}_{\sun}}
-\newcommand{\signorm}{\ensuremath{\xi_{\textrm{norm}}}}
+\newcommand{\msun}{\mathcal{M}_{\sun}\xspace}
+\newcommand{\signorm}{\ensuremath{\xi_{\textrm{norm}}}\xspace}
+\newcommand{\flate}{\ensuremath{f_{\textrm{late}}}\xspace}
 
 \newcommand{\fx}[2]{\ensuremath{f_{X}\, {#1}\, {10}^{#2}}\,\ergscm}
 \newcommand{\fxx}[2]{\ensuremath{f_{X}\sim{#1}\times{10}^{#2}}\,\ergscm}
@@ -118,12 +119,16 @@
 \newcommand{\Lxratio}{$L_X/L_{Edd}$}%$L_{X}/L_{Edd}$}
 \newcommand{\nperdegsq}{deg$^{-2}$}
 
-\newcommand{\mstar}{\ensuremath{\mathcal{M}_*}}
-\newcommand{\msolar}{\ensuremath{\mathcal{M}_{\odot}}}
-\newcommand{\mlim}{\ensuremath{\mathcal{M_{\text{lim}}}}}
-\newcommand{\mcomp}{\ensuremath{\mathcal{M_{\text{comp}}}}}
-\newcommand{\mIP}{\ensuremath{\mathcal{M_{\text{IP}}}}}
-\newcommand{\mMoustakas}{\ensuremath{\mathcal{M}_{\text{M13}}}}
+\newcommand{\mstar}{\ensuremath{\mathcal{M}_*}\xspace}
+\newcommand{\msolar}{\ensuremath{\mathcal{M}_{\odot}}\xspace}
+\newcommand{\mlim}{\ensuremath{\mathcal{M_{\text{lim}}}}\xspace}
+\newcommand{\mmax}{\ensuremath{\mathcal{M_{\text{max}}}}\xspace}
+\newcommand{\mcomp}{\ensuremath{\mathcal{M_{\text{comp}}}}\xspace}
+\newcommand{\mIP}{\ensuremath{\mathcal{M_{\text{IP}}}}\xspace}
+\newcommand{\mneigh}{\ensuremath{\mathcal{M_{\text{neigh}}}}\xspace}
+\newcommand{\Nneigh}{\ensuremath{N_{\text{neigh}}}\xspace}
+\newcommand{\mcentral}{\ensuremath{\mathcal{M_{\text{central}}}}\xspace}
+\newcommand{\mMoustakas}{\ensuremath{\mathcal{M}_{\text{M13}}}\xspace}
 \newcommand{\kms}{km~s$^{-1}$\xspace}
 
 \newcommand{\mrange}[2]{\ensuremath{10^{#1}\,<\,\mstar/\msun\,<\,10^{#2}}}
@@ -145,6 +150,7 @@
 \newcommand{\wGG}{\ensuremath{w_\textrm{GG}}}
 
 \newcommand{\iSEDfit}{\texttt{iSEDfit}\xspace}
+\newcommand{\IDL}{\texttt{IDL}\xspace}
 
 \newcommand{\maketmp}[1]{\expandafter\MakeUppercase\expandafter{#1}}
 \newcommand{\makecap}[1]{\texorpdfstring{\maketmp{#1}}}
@@ -191,3 +197,10 @@
 \newcommand{\xir}{\ensuremath{\xi(r)}\xspace}
 \newcommand{\rp}{\ensuremath{r_p}\xspace}
 \newcommand{\rpvalue}[2]{\ensuremath{\rp\,{#1}\,{#2}\hMpc}\xspace}
+
+\newcommand{\sigmaBS}{\ensuremath{\sigma_{\textrm{BS}}}\xspace}
+\newcommand{\sigmaJK}{\ensuremath{\sigma_{\textrm{JK}}}\xspace}
+\newcommand{\sigmaz}{\ensuremath{\sigma_{\textrm{z}}}\xspace}
+
+\newcommand{\citePB}{B16\xspace}
+\newcommand{\hubble}{\ensuremath{70~\textrm{km~s}^{-1}~\textrm{Mpc}^{-1}}}

@@ -1,3 +1,67 @@
 %!TEX root = main.tex
 
 \section{Introduction}\label{sec:intro}
+
+The distributions of many related galaxy properties are bimodal, including color, star formation rate (SFR), gas fraction, and morphology.
+Galaxies with low rates of star formation are usually redder and exhibit ``early-type'' morphologies, while those with higher star formation rates tend to be bluer and have ``late-type'' morphologies.
+The existence of this bimodality is consistent with star formation in galaxies turning off, or quenching, rapidly.
+If galaxies quenched over longer timescales, distributions of the colors and SFRs would be expected to be more continuous.
+Numerous mechanisms for quenching have been proposed, including the shock-heating of infalling gas, AGN feedback, and gas heating caused by minor mergers, among others, \todo{citations?}, but agreement on which of these play the largest roles remains illusive in the absence of definitive evidence.
+
+At least some of the causes of quenching are related to the evolution of large-scale structure, and thus a better understanding of either phenomenon may enhance our knowledge of the other.
+
+The recently discovered phenomenon of galactic conformity may provide additional insights into and constraints on the evolution of galaxies and large-scale structure.
+Galactic conformity refers to correlations between the colors and SFRs of massive central galaxies and their satellites.
+It was first identified by \citet{Weinmann06} in a $\sim$1950~\degsq sample of the SDSS to $z<0.03$.
+\citet{Weinmann06} found that the early-type fraction of satellites is higher for early-type central galaxies than for late-type centrals residing in halos of the same mass.
+This correlation exists for halo masses spanning three orders of magnitude, from $10^{12}$ to $10^{15}~\msun$.
+
+\citet{Kauffmann13} compared star-forming and quiescent SDSS galaxies at fixed \emph{stellar} mass from $5\times10^9$ to $3\times10^{11}~\msun$, and found evidence of conformity at projected distances up to $\sim$4~Mpc, well beyond the virial radius of a single halo.
+The \citet{Kauffmann13} result motivated the distinction of ``one-halo'' and ``two-halo'' conformity \citep{Hearin15a}, referring to correlations between centrals and their satellites within a single halo, and between centrals and neighbors in adjacent halos, respectively.
+\citet{Kauffmann13} also concluded that the scale dependence of conformity is correlated with the stellar mass of the central galaxy.
+Specifically, they found that a two-halo conformity term exists for low-mass centrals and is greatest at large separations ($>$1~Mpc), while the signal is confined to the one-halo regime for high-mass centrals.
+
+Galactic conformity (especially two-halo) is further evidence that standard halo occupation modeling, which presumes that the properties of a halo's galaxy population are determined solely by present day halo mass \todo{citation(s)}, does not represent the full picture of galaxy and halo clustering.
+Correlations between the colors and SFRs of central galaxies and their satellites \emph{at fixed halo mass} is a clear contradiction of the assumptions of mass-only halo occupation models.
+
+The dependence of halo clustering on properties besides mass, such as formation epoch and large-scale environment, is referred to as \emph{assembly bias} \todo{citations: Gao, Springel, \& White 2005, Wechsler06, Croton07, Gao \& White 2007, Zetner07, Dalal08, Tinker08, Lacerna \& Padilla 2011}.
+There is significant evidence that galactic conformity is a natural result of \emph{galaxy assembly bias}, and \citet{Hearin15b} concludes that conformity and assembly bias are in fact alternative descriptions of the same phenomenon.
+
+Halos that assembled earlier are more strongly clustered than more recently assembled halos of the same mass \citep{Hahn09?}.
+Older (younger) halos therefore inhabit more (less) dense environments and as a consequence are subjected to stronger (weaker) large-scale tidal fields.
+Strong tidal effects inhibit halo accretion, giving rise to what \citet{Hearin15b} dubs \emph{halo accretion conformity}:~the clustering of halos at fixed mass with high (lower) dark matter accretion rates.
+Two-halo galactic conformity follows from halo accretion conformity if gas and dark matter accretion rates are sufficiently coupled \todo{citations?}.
+
+\citet{Kauffmann15} proposes ``pre-heating'' as an alternative explanation for two-halo conformity.
+In the pre-heating scenario, gas is heated over large scales at early times by an early generation of AGN, causing coherent modulation of cooling and star formation among galaxies on the same large scales.
+
+Conformity effects have also been reproduced at $z=0$ in the \emph{Illustris} simulation \citep[see][]{Bray16}, and at higher redshift in the \emph{Bolshoi} simulation \citep{Klypin11, Hearin15a, Hearin15b}.
+\citet{Hearin15b} predicts that the strength of two-halo conformity should diminish both with increasing redshift, all but disappearing by $z\gtrsim1$, and with increasing halo mass, as more massive halos are less sensitive to tidal effects.
+The same work also proposes that present-day one-halo conformity may be a direct result of two-halo conformity at higher redshift, since many satellite galaxies where their own centrals at an earlier epoch.
+
+Measuring a statistical effect like galactic conformity requires very deep, relatively large volume surveys with precise redshifts.
+Not surprisingly, observational studies of conformity have until quite recently been limited to the redshift range of the SDSS.
+Searching for evidence of conformity over a much larger range of cosmic time is a valuable test of assembly bias, and may play an important role in constraining models of large-scale structure evolution.
+
+As of this writing three studies have tested for conformity or a related effect at $z>0.2$.
+Using a photometric redshifts from three surveys (UltraVISTA, UKIDSS UDS, and ZFOURGE \todo{citations?}) totaling 2.37~\degsq, \citet{Kawinwanichakij16} find evidence of one-halo conformity over the range $0.3 < z < 1.6$.
+\citet{Hartley15} also find one-halo conformity in the 0.77~\degsq UKIDSS UDS field at $0.4 < z < 1.9$.
+Bray et al.~(2016, in prep.) use cross-correlations to test the redshift and mass dependence of a phenomenon akin to one-halo conformity to $z<1$ in the PRIsm MUlti-object Survey \citep[PRIMUS;][]{Coil11, Cool13}, the survey used in this work.
+
+As we show in this paper, cosmic variance has a strong effect on the uncertainty--and therefore on the significance--of a conformity signal measured at intermediate to high redshift due to the small volume of sufficiently deep observational data currently available.
+While a conformity signal in one or two small fields may be a robust measurement \emph{within that field}, we caution against drawing broad conclusions about any observed dependence of conformity on redshift or stellar mass from such studies.  More data are needed.
+
+This work uses PRIMUS, the largest faint galaxy spectroscopic intermediate redshift survey to date.
+With a survey area of $\sim$9~\degsq, high redshift precision of $\sigmaz=0.005(1+z)$, and four spatially distinct fields, PRIMUS is uniquely suited for investigating one- and two-halo conformity at $0.2<z<1$.
+Previous studies of conformity at $z>0.2$ have necessarily used photometric redshifts.
+While simpler and more cost-effective to obtain than spectroscopic redshifts, photometric redshifts have substantially larger uncertainties.
+\citet{Kawinwanichakij16} adpot redshift-dependent uncertainties of $\sigmaz=0.01$~to~0.05 in their conformity study,
+while \citet{Hartley15} use $\sigmaz=0.014$~to~0.088, also dependent on redshift.
+With PRIMUS we improve upon the values of $\sigmaz$ used for existing measurements of conformity at $z>0.2$ by a factor of $\sim$2 to as much as $sim$10.
+
+The structure of this paper is as follows.
+In \S\ref{sec:data} we describe the survey used for this study and the details of sample selection.
+Our results are presented in \S\ref{sec:results}.
+In \S\ref{sec:discussion} we discuss the implications of our results in the context of other conformity studies and the predictions of simulations.
+We summarize our findings and conclusions in \S\ref{sec:summary}.
+Throughout this paper we assume $H_{0}=\hubble$, $\Omega_{\textrm{m}}=0.3$, and $\Omega_{\Lambda}=0.7$.
