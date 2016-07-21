@@ -2,66 +2,110 @@
 
 \section{Introduction}\label{sec:intro}
 
-The distributions of many related galaxy properties are bimodal, including color, star formation rate (SFR), gas fraction, and morphology.
-Galaxies with low rates of star formation are usually redder and exhibit ``early-type'' morphologies, while those with higher star formation rates tend to be bluer and have ``late-type'' morphologies.
-The existence of this bimodality is consistent with star formation in galaxies turning off, or quenching, rapidly.
-If galaxies quenched over longer timescales, distributions of the colors and SFRs would be expected to be more continuous.
-Numerous mechanisms for quenching have been proposed, including the shock-heating of infalling gas, AGN feedback, and gas heating caused by minor mergers, among others, \todo{citations?}, but agreement on which of these play the largest roles remains illusive in the absence of definitive evidence.
+% demographics of galaxy quenching: van den Bosch et al. 2003; Collister & Lahav 2005; Behroozi et al. 2013a; Tinker et al. 2013
 
-At least some of the causes of quenching are related to the evolution of large-scale structure, and thus a better understanding of either phenomenon may enhance our knowledge of the other.
+The distributions of many related galaxy properties are bimodal, including color, star formation rate (SFR), gas fraction, and morphology
+\citep{Strateva01, Kauffmann03, Baldry04, Balogh04a, Balogh04b}.
+Galaxies with lower star formation rates are usually redder and exhibit ``early-type'' morphologies, while those with higher star formation rates tend to be bluer and have ``late-type'' morphologies.
+The existence of this bimodality is consistent with star formation in galaxies turning off, or quenching, rapidly, as quenching over longer timescales would result in flatter distributions of the colors and SFRs {\bf(need refs)}.
+% Tinker & Wetzel 2010; Wetzel et al. 2013
+Numerous mechanisms for quenching have been proposed, including but not limited to the shock heating of infalling gas, stellar and AGN feedback, gas heating and/or removal caused by minor and major mergers or harassment {\bf(need refs)}.
+% shock-heating of infalling gas: White & Rees 1978; Dekel & Birnboim 2006
+% minor mergers: Johansson et al. 2009
+% major mergers:
+% galaxy harassment: Moore et al. 1996
+% AGN feedback: Croton et al. 2006, Hopkins et al. 2006
+Agreement on which of these mechanisms plays the largest role remains illusive in the absence of definitive evidence, although it is likely that the relative importance of these various mechanisms depends on stellar or halo mass.
 
-The recently discovered phenomenon of galactic conformity may provide additional insights into and constraints on the evolution of galaxies and large-scale structure.
-Galactic conformity refers to correlations between the colors and SFRs of massive central galaxies and their satellites.
-It was first identified by \citet{Weinmann06} in a $\sim$1950~\degsq sample of the SDSS to $z<0.03$.
-\citet{Weinmann06} found that the early-type fraction of satellites is higher for early-type central galaxies than for late-type centrals residing in halos of the same mass.
-This correlation exists for halo masses spanning three orders of magnitude, from $10^{12}$ to $10^{15}~\msun$.
+%At least some quenching mechanisms are related to the large-scale structure of the Universe, and thus a better understanding of either phenomenon may enhance our knowledge of the other. {\bf(not sure what you mean by the second part of this sentence.)}
+The recently-discovered phenomenon of galactic conformity may provide additional insights into and constraints on the quenching mechanism, and more broadly, the dependence of galaxy evolution on large-scale structure.
+Galactic conformity refers to correlations between the colors and SFRs of massive central galaxies and their nearby neighboring galaxies.
+It was first identified by \citet[][hereafter W06]{Weinmann06} in the Sloan Digital Sky Survey \citep[SDSS;][]{York00} at $z<0.03$.
+W06 identified galaxy groups in SDSS---defined as the ensemble of galaxies residing in the same dark matter halo---using a group-finding algorithm \citep{Yang05a}.
+They define central galaxies as the brightest galaxy in each group, and dub all other group members satellite galaxies.
+Group halo masses are estimated by assuming a correlation between group luminosity and halo mass.
+W06 found that the quiescent fraction of satellite galaxies is higher for quiescent central galaxies than for star-forming central galaxies residing in halos of the same mass, and that this correlation exists for halo masses spanning three orders of magnitude, from $10^{12}$ to $10^{15}~\msun$.
 
-\citet{Kauffmann13} compared star-forming and quiescent SDSS galaxies at fixed \emph{stellar} mass from $5\times10^9$ to $3\times10^{11}~\msun$, and found evidence of conformity at projected distances up to $\sim$4~Mpc, well beyond the virial radius of a single halo.
-The \citet{Kauffmann13} result motivated the distinction of ``one-halo'' and ``two-halo'' conformity \citep{Hearin15a}, referring to correlations between centrals and their satellites within a single halo, and between centrals and neighbors in adjacent halos, respectively.
+\citet{Kauffmann13} compared the specific star formation rates (sSFRs) of central SDSS galaxies and their neighbor galaxies at fixed \emph{stellar} mass from $5\times10^9$ to $3\times10^{11}~\msun$ and found evidence of conformity at projected distances up to $\sim4$~Mpc, well beyond the virial radius of a single halo.
+The \citet{Kauffmann13} result motivated the distinction of ``one-halo'' and ``two-halo'' conformity \citep*{Hearin15a}, referring to correlations between central galaxies and their satellite galaxies within a single halo, and between central galaxies and neighboring galaxies in adjacent halos, respectively.
 \citet{Kauffmann13} also concluded that the scale dependence of conformity is correlated with the stellar mass of the central galaxy.
-Specifically, they found that a two-halo conformity term exists for low-mass centrals and is greatest at large separations ($>$1~Mpc), while the signal is confined to the one-halo regime for high-mass centrals.
+Specifically, they found that a two-halo conformity term exists for low-mass centrals, which they define as ${10^{9.7}<\mstar<10^{10.3}~\msun}$,
+and is greatest at large separations ($>1$~Mpc).
+For high-mass central galaxies (${10^{10.7}<\mstar<10^{11.3}~\msun}$) the signal is confined to the one-halo regime.
 
-Galactic conformity (especially two-halo) is further evidence that standard halo occupation modeling, which presumes that the properties of a halo's galaxy population are determined solely by present day halo mass \todo{citation(s)}, does not represent the full picture of galaxy and halo clustering.
+Galactic conformity (especially two-halo conformity) is further evidence that standard halo occupation modeling, which presumes that the properties of a halo's galaxy population are determined solely by present day halo mass \todo{need refs}
+% Halo Occupation Distribution model: Berlind & Weinberg 2002 
+, does not represent the full picture of galaxy and halo clustering {\bf(need refs)}.
+% abundance matching: Kravstov et al. 2004
 Correlations between the colors and SFRs of central galaxies and their satellites \emph{at fixed halo mass} is a clear contradiction of the assumptions of mass-only halo occupation models.
 
-The dependence of halo clustering on properties besides mass, such as formation epoch and large-scale environment, is referred to as \emph{assembly bias} \todo{citations: Gao, Springel, \& White 2005, Wechsler06, Croton07, Gao \& White 2007, Zetner07, Dalal08, Tinker08, Lacerna \& Padilla 2011}.
-There is significant evidence that galactic conformity is a natural result of \emph{galaxy assembly bias}, and \citet{Hearin15b} concludes that conformity and assembly bias are in fact alternative descriptions of the same phenomenon.
+The additional dependence of halo clustering on properties beyond halo mass, such as formation epoch and large-scale environment, is referred to as \emph{assembly bias} \todo{need refs}.
+% Gao, Springel, & White 2005, Wechsler06, Croton07, Gao & White 2007, Zentner07, Dalal08, Tinker08, Lacerna & Padilla 2011
+There is substantial evidence that galactic conformity is a natural result of \emph{galaxy assembly bias}.
 
-Halos that assembled earlier are more strongly clustered than more recently assembled halos of the same mass \citep{Hahn09?}.
-Older (younger) halos therefore inhabit more (less) dense environments and as a consequence are subjected to stronger (weaker) large-scale tidal fields.
-Strong tidal effects inhibit halo accretion, giving rise to what \citet{Hearin15b} dubs \emph{halo accretion conformity}:~the clustering of halos at fixed mass with high (lower) dark matter accretion rates.
-Two-halo galactic conformity follows from halo accretion conformity if gas and dark matter accretion rates are sufficiently coupled \todo{citations?}.
+\citet{Hearin15a} tests for two-halo conformity with three different (sub)halo abundance matching (SHAM) models of halo occupation statistics by assigning galaxies to halos in the N-body \emph{Bolshoi} simulation \citep{Klypin11}, which follows the evolution of $2048^3$ particles in a $250/h$~Mpc periodic box.
+Both the standard halo occupation model, in which the quenching of central and satellite galaxies depends only on halo mass, and the delayed-then-rapid model \citep{Wetzel13}, in which satellite galaxy quenching depends on both time since accretion and halo mass at accretion time, exhibit zero two-halo conformity.
+The age matching SHAM model, in which central and satellite galaxy quenching depends on halo mass and (sub)halo formation time, and the lowest SFR galaxies are assigned to oldest the halos, \emph{does} exhibit two-halo conformity comparable to that seen by \citet{Kauffmann13} in SDSS.
+\citet{Hearin15a} also shuffles the SFRs of just satellite and just central galaxies in the age matching model, and finds that shuffling satellite galaxy SFRs has little effect on the conformity signal, while shuffling the SFRs of central galaxies erases it entirely.
+This result focuses the likely connection to one between two-halo conformity and \emph{central} galaxy assembly bias.
 
-\citet{Kauffmann15} proposes ``pre-heating'' as an alternative explanation for two-halo conformity.
-In the pre-heating scenario, gas is heated over large scales at early times by an early generation of AGN, causing coherent modulation of cooling and star formation among galaxies on the same large scales.
+A follow-up paper, \citet*{Hearin15b}, concludes that conformity and assembly bias are alternative descriptions of the same underlying phenomenon.
+Because halos that assembled earlier are more strongly clustered than more recently assembled halos of the same mass \todo{cite Hahn09?}, older (younger) halos inhabit more (less) dense environments and are therefore subjected to stronger (weaker) large-scale tidal fields.
+Strong tidal effects inhibit the rate at which dark matter is accreted into halos, giving rise to what \citet{Hearin15b} dubs \emph{halo accretion conformity}:~the clustering of halos at fixed mass with high (lower) dark matter accretion rates.
+\citet{Hearin15b} finds evidence of halo accretion conformity in the \emph{Bolshoi} simulation, and proposes that two-halo galactic conformity follows from halo accretion conformity if gas and dark matter accretion rates are sufficiently coupled \todo{need refs}.
+% 
+The same work also proposes that present-day one-halo conformity may be a direct result of two-halo conformity at higher redshift, since many satellite galaxies were their own centrals at an earlier epoch.
 
-Conformity effects have also been reproduced at $z=0$ in the \emph{Illustris} simulation \citep[see][]{Bray16}, and at higher redshift in the \emph{Bolshoi} simulation \citep{Klypin11, Hearin15a, Hearin15b}.
-\citet{Hearin15b} predicts that the strength of two-halo conformity should diminish both with increasing redshift, all but disappearing by $z\gtrsim1$, and with increasing halo mass, as more massive halos are less sensitive to tidal effects.
-The same work also proposes that present-day one-halo conformity may be a direct result of two-halo conformity at higher redshift, since many satellite galaxies where their own centrals at an earlier epoch.
+Additionally, \citet{Hearin15b} clearly predicts that the strength of two-halo conformity should diminish both with increasing redshift \todo{Theorists: what is the argument for this?}, all but disappearing by $z\gtrsim1$, and with increasing halo mass, as more massive halos are less sensitive to tidal effects.
+For example, at a distance of 2 (3)~Mpc conformity strength is predicted to weaken by $\sim14$\% ($\sim9$\%) at $z\sim0.5$ compared to $z=0$, and by $\sim22$\% ($\sim14$\%) at $z\sim1$.
+Assuming a central galaxy's stellar mass is $\sim2$~dex less than the mass of its host halo, then the predictions of \citet{Hearin15b} equate to a 10--20\% (3--7\%) decrease in conformity strength at a distance of 2 (3) Mpc for primary galaxies with $\logM\sim11$ versus $\sim10$, with a greater decrease in signal strength for less massive neighboring galaxies.
 
-Measuring a statistical effect like galactic conformity requires very deep, relatively large volume surveys with precise redshifts.
-Not surprisingly, observational studies of conformity have until quite recently been limited to the redshift range of the SDSS.
-Searching for evidence of conformity over a much larger range of cosmic time is a valuable test of assembly bias, and may play an important role in constraining models of large-scale structure evolution.
+Strong one-halo galactic conformity, as well as a weaker two-halo signal to $\sim10$~Mpc at $z=0$ has been found by \citet{Bray16a} in \emph{Illustris} \citep{Vogelsberger14}, a dark matter and hydrodynamical simulation of a $75/h$~Mpc box from $z=127$ to $z=0$.
+\emph{Illustris} contains 18,000 galaxies with $\mstar>2\times10^9~\msun$, and models the abundances of nine elements, which are used to assign stellar masses and SFRs to galaxies.
+\citet{Bray16a} also finds ``halo age conformity'' to $R\sim10$~Mpc in \emph{Illustris}, in which smaller old (young), ``secondary'' halos are preferentially found in the vicinity of larger old (young), ``primary'' halos.
 
-As of this writing three studies have tested for conformity or a related effect at $z>0.2$.
-Using a photometric redshifts from three surveys (UltraVISTA, UKIDSS UDS, and ZFOURGE \todo{citations?}) totaling 2.37~\degsq, \citet{Kawinwanichakij16} find evidence of one-halo conformity over the range $0.3 < z < 1.6$.
-\citet{Hartley15} also find one-halo conformity in the 0.77~\degsq UKIDSS UDS field at $0.4 < z < 1.9$.
-Bray et al.~(2016, in prep.) use cross-correlations to test the redshift and mass dependence of a phenomenon akin to one-halo conformity to $z<1$ in the PRIsm MUlti-object Survey \citep[PRIMUS;][]{Coil11, Cool13}, the survey used in this work.
+\citet[][hereafter GK15]{Kauffmann15} proposes ``pre-heating'' \todo{Theorists: could something else pre-heat?} as an alternative explanation for galactic conformity.
+In the pre-heating scenario, feedback from an early generation of accreting black holes heats gas over large scales at an early epoch, causing coherent modulation of cooling and star formation among galaxies on the same large scales.
+As evidence, GK15 cites an excess number of very massive galaxies out to a radius of 2.5~Mpc around quiescent central galaxies in the same SDSS sample used in \citet{Kauffmann13}.
+They also find that massive galaxies in the vicinity of low sSFR central galaxies at $z=0$ are 3--4 times more likely to host radio-loud active galactic nuclei (AGN) than those around a control sample of higher sSFR central galaxies.
 
-As we show in this paper, cosmic variance has a strong effect on the uncertainty--and therefore on the significance--of a conformity signal measured at intermediate to high redshift due to the small volume of sufficiently deep observational data currently available.
-While a conformity signal in one or two small fields may be a robust measurement \emph{within that field}, we caution against drawing broad conclusions about any observed dependence of conformity on redshift or stellar mass from such studies.  More data are needed.
+% pre-heating: Valageas & Silk 1999; Mo & Mao 2002
 
-This work uses PRIMUS, the largest faint galaxy spectroscopic intermediate redshift survey to date.
-With a survey area of $\sim$9~\degsq, high redshift precision of $\sigmaz=0.005(1+z)$, and four spatially distinct fields, PRIMUS is uniquely suited for investigating one- and two-halo conformity at $0.2<z<1$.
-Previous studies of conformity at $z>0.2$ have necessarily used photometric redshifts.
-While simpler and more cost-effective to obtain than spectroscopic redshifts, photometric redshifts have substantially larger uncertainties.
-\citet{Kawinwanichakij16} adpot redshift-dependent uncertainties of $\sigmaz=0.01$~to~0.05 in their conformity study,
-while \citet{Hartley15} use $\sigmaz=0.014$~to~0.088, also dependent on redshift.
-With PRIMUS we improve upon the values of $\sigmaz$ used for existing measurements of conformity at $z>0.2$ by a factor of $\sim$2 to as much as $sim$10.
+Measuring a statistical effect like galactic conformity at $z>0.2$ requires very deep relatively large volume surveys with precise redshifts.
+Not surprisingly, observational studies of conformity have until recently been limited to the redshift range of the SDSS.
+Searching for evidence of conformity over a much larger range of cosmic time is a valuable test of assembly bias, and may play an important role in constraining the quenching mechanism(s) at work at certain stellar masses and in certain environments.
+
+As of this writing only a few studies have tested for conformity or a related effect at $z>0.2$.
+Using photometric redshifts from three surveys totaling $2.37~\degsq$:~UltraVISTA \citep{McCracken12},
+the UKIRT Infrared Deep Sky Survey \citep[UKIDSS;][]{Lawrence07} Ultra Deep Survey (UDS; Almaini et al., in prep.),
+and the FourStar Galaxy Evolution Survey \citep[ZFOURGE;][]{Spitler12}, \citet{Kawinwanichakij16} test for one-halo conformity in four redshift bins over the range ${0.3 < z < 2.5}$ for central galaxies with ${\mstar > 10^{10.5}~\msun}$.
+They define central galaxies as those without any more massive galaxies within a projected distance of 300 comoving kpc (ckpc).
+Satellites galaxies are defined as those with ${\mstar < 10^{10.2}~\msun}$ and a redshift difference of ${\Delta z \le 0.2}$ from a the central galaxy.
+\citet{Kawinwanichakij16} estimate the average quiescent fraction of satellite galaxies in fixed apertures for stellar mass-matched samples of quiescent and star-forming central galaxies.
+They find a significant one-halo conformity signal ${0.6 < z < 1.6}$ and a weakly significant signal at ${0.3 < z < 0.6}$.
+
+\todo{Change description of H15...}
+\citet{Hartley15} find evidence of one-halo conformity in a sample of ${10^{10.5}<\mstar<10^{11}~\msun}$ central galaxies in the 0.77~\degsq UKIDSS UDS field at ${0.4 < z < 1.9}$.
+Central galaxies are defined as those with no other galaxies with 450 projected kpc and ${\sqrt{2}\,\sigmaz(1+z)}$ that have stellar mass more than 0.3~dex greater than the stellar mass of the central.
+\citet{Hartley15} measure the radial density profiles of quiescent satellite galaxies to a projected distance of 1~Mpc for mass-matched samples of quiescent and star-forming central galaxies.
+They find that the quiescent satellite galaxy fraction is generally greater for quiescent central galaxies than it is for star-forming central galaxies out to a projected distance of $\sim350$~kpc, beyond which they deem their measurements unreliable.
+
+This work uses the PRIsm MUlti-object Survey \citep[PRIMUS;][]{Coil11, Cool13}, the largest faint galaxy spectroscopic redshift survey to date.
+With a survey area of $\sim9$~\degsq, a high redshift precision of $\sigmaz=0.005\,(1+z)$, and four spatially-distinct fields, PRIMUS is uniquely suited for investigating one- and two-halo conformity at $0.2<z<1$.
+While previous studies of conformity at $z>0.2$ have necessarily used photometric redshifts, spectroscopic redshifts allow us to much more cleanly identify isolated central-like galaxies, which is crucial for a robust measurement of conformity.
+PRIMUS also allows us to test the effects of cosmic variance and the need for large areas in multiple fields at intermediate redshift,
+and to investigate the redshift and mass dependence of one- and two-halo conformity.
+In a related forthcoming paper, Bray et al.~(2016b, in prep.) does a complimentary analysis with cross-correlations between the PRIMUS spectroscopic and photometric galaxy samples.
 
 The structure of this paper is as follows.
 In \S\ref{sec:data} we describe the survey used for this study and the details of sample selection.
 Our results are presented in \S\ref{sec:results}.
-In \S\ref{sec:discussion} we discuss the implications of our results in the context of other conformity studies and the predictions of simulations.
-We summarize our findings and conclusions in \S\ref{sec:summary}.
+In \S\ref{sec:discussion} we discuss the implications of our results in the context of other conformity studies and the predictions from simulations and theory.
+We summarize our findings and conclusions in \S\ref{sec:conclusion}.
 Throughout this paper we assume $H_{0}=\hubble$, $\Omega_{\textrm{m}}=0.3$, and $\Omega_{\Lambda}=0.7$.
+
+%Move to discussion:
+
+%While simpler and more cost-effective to obtain than spectroscopic redshifts, photometric redshifts have substantially larger uncertainties.  \citet{Kawinwanichakij16} adopt redshift-dependent uncertainties of $\sigmaz=0.01$~to~0.05 in their conformity study, while \citet{Hartley15} use $\sigmaz=0.014$~to~0.088, also dependent on redshift.  With PRIMUS we improve upon the values of $\sigmaz$ used for existing measurements of conformity at $z>0.2$ by a factor of $\sim2$ to as much as $sim$10.
+
+%As we show in this paper, cosmic variance has a strong effect on the uncertainty--and therefore on the significance--of a conformity signal measured at intermediate to high redshift due to the small volume of sufficiently deep observational data currently available.  While a conformity signal in one or two small fields may be a robust measurement \emph{within that field}, we caution against drawing broad conclusions about any observed dependence of conformity on redshift or stellar mass from such studies.  More data are needed.

@@ -1,46 +1,47 @@
-%!TEX root = main.tex
+\%!TEX root = main.tex
 
 \section{Results}\label{sec:results}
 
 In this section we discuss the importance of matching star forming and quiescent IP 
-samples in both stellar mass and redshift, and we present the one and two-halo 
+samples in both stellar mass and redshift, and we present the one- and two-halo 
 conformity signal in the matched PRIMUS sample.  We discuss the effects of 
 cosmic variance on measures of conformity and the need for jackknife
 errors at intermediate redshifts, and we investigate the redshift and stellar mass 
 dependence of conformity within the PRIMUS sample.
 
-%\subsection{Neighbor Late-type Fractions}\label{sec:LTfraction}
+%\subsection{Neighbor Star-forming Fractions}\label{sec:LTfraction}
 \subsection{The Effects of Matching Redshift and Stellar Mass on the Conformity Signal}\label{sec:LTfraction}
 
 As discussed above, galactic conformity is the observed tendency of neighbor 
-galaxies to have the same star-formation type (quiescent/early or star-forming/late) 
+galaxies to have the same star-formation type (star-forming or quiescent) 
 as their associated IP galaxy.
 One-halo conformity refers to conformity between an IP and the neighbors within the 
-same dark matter halo (i.e.~within $\sim$1~Mpc of the IP),
+same dark matter halo (i.e.~within $\sim1$~Mpc of the IP),
 while two-halo conformity refers to conformity between an IP and neighbors in other 
-adjacent halos (i.e.~at distances greater than $\sim$1~Mpc from the IP).
+adjacent halos (i.e.~at distances greater than $\sim1$~Mpc from the IP).
 
-We therefore want to measure how the fraction of neighbors that are late-type differs 
+We therefore want to measure how the fraction of neighbors that are star-forming differs 
 between star-forming and quiescent IP hosts as a function of projected radius from 
 the IP.
 To do this, for each IP in our matched sample we count all neighbors within 
 concentric cylindrical shells of length ${2\times2\,\sigma_{z}(1+z_{\text{IP}})}$
 and cross-sectional area
 ${\pi[(\Rproj+d\Rproj)^2-\Rproj^2]}$, where $\Rproj$ is the 2D projected radius from the IP in (physical) Mpc, and $d\Rproj$ is the shell width in Mpc.
-The late-type fraction of neighbors of star-forming IPs in a cylindrical shell 
-at projected radius $\Rproj$ to ${(\Rproj+d\Rproj)}$, $f^{\textrm{SF-IP}}_{\textrm{late}}
-(\Rproj)$ is defined to be the sum of the targeting weights (see~\S\ref{sec:targ_weight}) of the late-type neighbors of star-forming IPs in the shell, 
+The star-forming fraction of neighbors of star-forming IPs in a cylindrical shell 
+at projected radius $\Rproj$ to ${(\Rproj+d\Rproj)}$, $f^{\textrm{SF-IP}}_{\textrm{SF}}
+(\Rproj)$ is defined to be the sum of the targeting weights (see~\S\ref{sec:targ_weight}) of the star-forming neighbors of star-forming IPs in the shell, 
 divided by the sum of the
 targeting weights of \emph{all} neighbors of star-forming IPs in the shell:
 \begin{equation}
-        f^{\textrm{SF-IP}}_{\textrm{late}}(\Rproj) = \frac
-        {\displaystyle \sum_{i=1}^{N_{\textrm{SF-IP}}} \sum_{j=1}^{N_{\textrm{late},i}} w_{ij} }
-        {\displaystyle \sum_{i=1}^{N_{\textrm{SF-IP}}} \sum_{k=1}^{N_{\textrm{tot},i}} w_{ik} }, \nonumber
+        f^{\textrm{SF-IP}}_{\textrm{SF}}(\Rproj) = \frac
+        {\displaystyle \sum_{i=1}^{N_{\textrm{SF-IP}}} \sum_{j=1}^{N_{\textrm{SF},i}} w_{ij} }
+        {\displaystyle \sum_{i=1}^{N_{\textrm{SF-IP}}} \sum_{k=1}^{N_{\textrm{tot},i}} w_{ik} },
+\label{eq:SFfrac}
 \end{equation}
 and likewise for quiescent IPs.
-$N_{\textrm{SF-IP}}$ is the total number of star-forming IPs, $N_{\textrm{late},i}$ is the number of late-type neighbors of IP $i$ in the shell, $N_{\textrm{tot},i}$ is the
+$N_{\textrm{SF-IP}}$ is the total number of star-forming IPs, $N_{\textrm{SF},i}$ is the number of star-forming neighbors of IP $i$ in the shell, $N_{\textrm{tot},i}$ is the
 total number of neighbors of IP $i$ in the shell, and $w_{ij}$ and $w_{ik}$ are PRIMUS targeting weights of the neighbors.
-We are therefore essentially computing neighbor late-type fractions for star-forming 
+We are therefore essentially computing neighbor star-forming fractions for star-forming 
 and quiescent IPs by stacking the neighbors of all IPs of each type.
 
 \begin{figure*}
@@ -49,7 +50,7 @@ and quiescent IPs by stacking the neighbors of all IPs of each type.
 %  \fbox{\plotone{figures/unmatchedIPsampleCompare}}
   \plotone{figures/unmatchedIPsampleCompare}
   \caption{
-The fraction of late-type neighbor galaxies around star-forming 
+The fraction of star-forming neighbor galaxies around star-forming 
 and quiescent IPs, to a projected distance of ${\Rproj<15}$~Mpc, 
  for four different IP samples: 
 (a)~all IP candidates above the M13 mass completeness limit (\S\ref{sec:mass_limit});
@@ -65,10 +66,10 @@ The median redshift and stellar mass of each IP sample are shown in each panel.
 
 The importance of matching both the stellar mass and redshift distributions of our 
 IP sample is clearly illustrated in Figure~\ref{fig:IPsample_compare}, which shows 
-how the late-type fractions of neighbors around star-forming and quiescent IPs 
+how the star-forming fractions of neighbors around star-forming and quiescent IPs 
 differ when different IP samples are used.
 Figure~\ref{fig:IPsample_compare} shows the fraction of neighbors of star-forming 
-and quiescent IPs that are late-type as a function of projected radius from the 
+and quiescent IPs that are star-forming as a function of projected radius from the 
 IP in 1~Mpc annuli out to 15~Mpc for four different IP samples.
 %
 
@@ -78,7 +79,7 @@ Here the median stellar mass of the quiescent IP population is 0.42~dex greater
 than that of the star-forming IP population, and the median redshift is greater 
 by 0.05.
 This difference in the stellar mass distribution in particular means that 
-star-forming IPs are preferentially located at lower redshift, where the star-forming fraction of \emph{all} PRIMUS galaxies (the ``full'' sample; see~\S\ref{sec:targ_weight}) is larger than at higher redshifts.  The star-forming fraction of the full sample declines steadily from 0.80 at $z\sim0.2$ to 0.73 at $z\sim1.0$, causing us to overestimate of the neighbor late-type fraction for star-forming IPs at all projected radii.
+star-forming IPs are preferentially located at lower redshift, where the star-forming fraction of \emph{all} PRIMUS galaxies (the ``full'' sample; see~\S\ref{sec:targ_weight}) is larger than at higher redshifts.  The star-forming fraction of the full sample declines steadily from 0.80 at $z\sim0.2$ to 0.73 at $z\sim1.0$, causing us to overestimate of the neighbor star-forming fraction for star-forming IPs at all projected radii.
 The result is a relatively fixed offset between the solid and dashed lines in the 
 left panel of Figure~\ref{fig:IPsample_compare} that persists to the largest 
 projected radii we measure with PRIMUS, mimicking a conformity signal.  We therefore
@@ -87,19 +88,19 @@ measure a ``false'' conformity signal in this sample.
 In panel (b) we select star-forming and quiescent IP samples with matched redshift 
 distributions using the method described in \S\ref{sec:IPsample_matching}.  This 
 causes the large-scale offset to disappear, but there is still a difference in the 
-median stellar masses of the IP samples of 0.3~dex.  Since late-type fraction depends on stellar mass, that is not ideal. 
+median stellar masses of the IP samples of 0.3~dex.  Since star-forming fraction depends on stellar mass, that is not ideal. 
 In panel (c) we select star-forming and quiescent IP samples with matched stellar mass distributions; this results in a star-forming IP sample with a higher median 
 redshift than that of the quiescent IP sample (by 0.05).
-In this case the systematic bias mimics the opposite of a conformity signal; the solid line moves closer to the dashed line at all projected radii, actually dropping below it at $>$5~Mpc.
+In this case the systematic bias mimics the opposite of a conformity signal; the solid line moves closer to the dashed line at all projected radii, actually dropping below it at $>5$~Mpc.
 
 Finally, panel (d) shows results for our matched stellar mass and matched redshift IP sample.
 Failure to control for differences in the stellar mass and/or redshift distributions 
-can introduce bias into the relative neighbor late-type fractions of star-forming and quiescent IPs.
-Only by matching both the stellar mass and redshift distributions of our star-forming and quiescent IP samples do we eliminate systematic biases in neighbor late-type fraction measurements that could masquerade as a conformity signal.
+can introduce bias into the relative neighbor star-forming fractions of star-forming and quiescent IPs.
+Only by matching both the stellar mass and redshift distributions of our star-forming and quiescent IP samples do we eliminate systematic biases in neighbor star-forming fraction measurements that could masquerade as a conformity signal.
 For the remainder of this paper, the IP samples matched in both stellar mass and redshift are referred to as the ``matched'' sample.
 
 
-\subsection{One and Two-Halo Conformity Signal in Matched Sample}\label{sec:signal}
+\subsection{One- and Two-Halo Conformity Signal in Matched Sample}\label{sec:signal}
 
 \begin{figure*}
   \epsscale{0.7}
@@ -107,7 +108,7 @@ For the remainder of this paper, the IP samples matched in both stellar mass and
 %  \fbox{\plotone{figures/latefracplot_BSE_IPmatchFBF_PHI37_allz_250kpc}}
   \plotone{figures/latefracplot_BSE_IPmatchFBF_PHI37_allz_250kpc}
   \caption{
-The fraction of late-type neighbor galaxies around star-forming 
+The fraction of star-forming neighbor galaxies around star-forming 
 and quiescent IPs, to a projected distance of ${\Rproj<5}$~Mpc, 
 for IP samples matched in both stellar mass and redshift, using 
 finer ${d\Rproj=0.25}$~Mpc radial bins for all star-forming (blue solid line) and quiescent (red dashed line) IPs in the matched sample.
@@ -116,16 +117,16 @@ The errors shown have been computed by bootstrap resampling.
   \label{fig:latefrac_matched}
 \end{figure*}
 
-Stacked neighbor late-type fractions for the matched sample of star-forming and quiescent IPs are shown in Figure~\ref{fig:latefrac_matched}, here using finer radial bins.  The errors here and above have been estimated by bootstrap resampling, where for each radial bin we randomly select with replacement 90 percent of all star-forming or quiescent IPs 200 times, and compute $\flate$ for each of the 200 samples.  The bootstrap error is the standard deviation of the $\flate$ distribution.  Below in \S\ref{sec:errors} we discuss the merits of estimating error with jackknife versus bootstrap resampling.
+Stacked neighbor star-forming fractions for the matched sample of star-forming and quiescent IPs are shown in Figure~\ref{fig:latefrac_matched}, here using finer radial bins.  The errors here and above have been estimated by bootstrap resampling, where for each radial bin we randomly select with replacement 90 percent of all star-forming or quiescent IPs 200 times, and compute $\flate$ for each of the 200 samples.  The bootstrap error is the standard deviation of the $\flate$ distribution.  Below in \S\ref{sec:errors} we discuss the merits of estimating error with jackknife versus bootstrap resampling.
 
-In Figure~\ref{fig:latefrac_matched} the one-halo component of the conformity signal is clearly visible as the 4--7\% difference between $\flate$ for star-forming and quiescent IPs at $\Rproj < 1$~Mpc.  Within this range, $\flate$ for both IP types is greatest at $\Rproj<0.5$~Mpc;~$\sim$0.86 for star-fomring and $\sim$0.79--0.82 for quiescent IPs.  At $\Rproj=0.5$~Mpc $\flate$ for both IP types drops sharply by at least 8\% to $\sim$0.76 for star-forming and $\sim$0.72 for quiescent IPs.
+In Figure~\ref{fig:latefrac_matched} the one-halo component of the conformity signal is clearly visible as the 4--7\% difference between $\flate$ for star-forming and quiescent IPs at $\Rproj < 1$~Mpc.  Within this range, $\flate$ for both IP types is greatest at $\Rproj<0.5$~Mpc;~$\sim0.86$ for star-fomring and $\sim0.79$--0.82 for quiescent IPs.  At $\Rproj=0.5$~Mpc $\flate$ for both IP types drops sharply by at least 8\% to $\sim0.76$ for star-forming and $\sim0.72$ for quiescent IPs.
 
-This break at 500~kpc is an artifact of the isolation criteria used to identify isolated primaries (see \S\ref{sec:IPsample}), and the fact that the fraction of all galaxies in our full sample that are late-type is a decreasing function of stellar mass.  IP galaxies by definition have no other galaxies within 500 projected kpc with stellar mass greater than half the stellar mass of the IP.  Thus the neighbor population within 500~kpc of both star-forming and quiescent IPs will be skewed toward late-type compared to neighbors within $\Rproj=0.5$--5~Mpc.
+This break at 500~kpc is an artifact of the isolation criteria used to identify isolated primaries (see \S\ref{sec:IPsample}), and the fact that the fraction of all galaxies in our full sample that are star-forming is a decreasing function of stellar mass.  IP galaxies by definition have no other galaxies within 500 projected kpc with stellar mass greater than half the stellar mass of the IP.  Thus the neighbor population within 500~kpc of both star-forming and quiescent IPs will be skewed toward star-forming compared to neighbors within $\Rproj=0.5$--5~Mpc.
 
 To confirm that this feature of Figure~\ref{fig:latefrac_matched} is a direct result of our choice of a projected radius of 500~kpc when identifying IPs, we also measured $\flate$ for redshift and stellar mass-matched samples of star-forming and quiescent IPs selected using 250 and 750~kpc as the projected radius in our isolation criteria.  As expected, when 250~kpc is used to identify IPs, the break in $\flate$ for both star-forming and quiescent IPs occurs at 250~kpc, and likewise for 750~kpc.
-Because conformity is the \emph{difference} between $\flate$ for star-forming and quiescent IPs, and does not depend on the absolute late-type neighbor fraction for either IP type, this break at 500~kpc does not affect our result.
+Because conformity is the \emph{difference} between $\flate$ for star-forming and quiescent IPs, and does not depend on the absolute star-forming neighbor fraction for either IP type, this break at 500~kpc does not affect our result.
 
-Over $\Rproj\simeq1$--1.5~Mpc $\flate$ for quiescent IPs increases to $\sim$0.75, while for star-forming IPs $\flate$ begins to level off at $\sim$0.76.  This $\sim$1\% difference between the two fractions is a two-halo conformity signal that persists to to roughly 3~Mpc.  At $3\lesssim\Rproj<5$~Mpc $\flate$ for both IP types is effectively constant and nearly equal, such that no conformity signal is present beyond $\Rproj\simeq3$~Mpc.
+Over $\Rproj\simeq1$--1.5~Mpc $\flate$ for quiescent IPs increases to $\sim0.75$, while for star-forming IPs $\flate$ begins to level off at $\sim0.76$.  This $\sim1$\% difference between the two fractions is a two-halo conformity signal that persists to to roughly 3~Mpc.  At $3\lesssim\Rproj<5$~Mpc $\flate$ for both IP types is effectively constant and nearly equal, such that no conformity signal is present beyond $\Rproj\simeq3$~Mpc.
 
 %%%%%%% EQUAL WEIGHT TO EACH IP:
 
@@ -136,8 +137,8 @@ Over $\Rproj\simeq1$--1.5~Mpc $\flate$ for quiescent IPs increases to $\sim$0.75
   \plotone{figures/latefracplot_BSE_IPmatchFBF_PHI37_allz_median_quartiles}
   \caption{
 Similar to Figure~\ref{fig:latefrac_matched}, except here $\flate$ is the median of 
-the distribution of non-zero individual neighbor late-type fractions for each IP type as a function of $\Rproj$.  This effectively gives equal weight to each IP, instead of upweighting the IPs with more neighbors, as shown in Figure 6.
-Also shown here is the mean of the non-zero neighbor late-type fraction distributions of star-forming and quiescent IPs (purple dot-dashed and magenta dotted lines),
+the distribution of non-zero individual neighbor star-forming fractions for each IP type as a function of $\Rproj$.  This effectively gives equal weight to each IP, instead of upweighting the IPs with more neighbors, as shown in Figure 6.
+Also shown here is the mean of the non-zero neighbor star-forming fraction distributions of star-forming and quiescent IPs (purple dot-dashed and magenta dotted lines),
 and the interquartile range of the combined distribution for both IP types (gray shaded region).
 }
   \label{fig:latefrac_quartiles}
@@ -146,22 +147,22 @@ and the interquartile range of the combined distribution for both IP types (gray
 Within a particular radial bin (or shell around each IP), this stacking method 
 weights IPs with more neighbors more heavily than those with fewer or no neighbors,
 for that bin.
-To assess whether this will bias our results, we recompute the neighbor late-type fraction, 
-now assigning equal weight to each IP by computing the late-type fraction 
+To assess whether this will bias our results, we recompute the neighbor star-forming fraction, 
+now assigning equal weight to each IP by computing the star-forming fraction 
 individually for each IP and then taking the median of the distribution of all 
 non-zero fractions for both IP types, within each 1~Mpc radial bin.
 The result is shown in Figure~\ref{fig:latefrac_quartiles}, which also shows the 
-mean individual neighbor late-type fraction for both IP types in each radial bin (again using
+mean individual neighbor star-forming fraction for both IP types in each radial bin (again using
 only non-zero fractions), and the interquartile range (25$^{\textrm{th}}$ to 75$^{\textrm{th}}$ percentile) of the combined $\flate$ distribution for both IP types.
 
-Above $\Rproj=1$~Mpc the large spread in the interquartile range indicates that three quarters of IPs have a neighbor late-type fraction of at least 65\%, while for one quarter of IPs the late-type fraction is over 90\%.
+Above $\Rproj=1$~Mpc the large spread in the interquartile range indicates that three quarters of IPs have a neighbor star-forming fraction of at least 65\%, while for one quarter of IPs the star-forming fraction is over 90\%.
 Median and interquartile range values are not shown for $\Rproj=0$--1~Mpc because in this bin the median (and 75$^{\textrm{th}}$ percentile) value of $\flate$ for both IP types is 1.
 
 In the $\Rproj<1$~Mpc bin the only meaningful measure of conformity is the mean values of the $\flate$ distributions.
 Comparing the mean values we observe a conformity signal of a few percent at $\Rproj<1$~Mpc.
-Both the mean and median exhibit a smaller signal of $\sim$1--2\% at $1<\Rproj<3$~Mpc, and no signal at projected radii greater than 3~Mpc.
+Both the mean and median exhibit a smaller signal of $\sim1$--2\% at $1<\Rproj<3$~Mpc, and no signal at projected radii greater than 3~Mpc.
 
-The difference between neighbor late-type fractions for star-forming and quiescent IPs is comparable for equal weighting of IPs as shown here and when each IP is weighted proportionally to its number of neighbors, as shown in Figure~\ref{fig:latefrac_matched}.
+The difference between neighbor star-forming fractions for star-forming and quiescent IPs is comparable for equal weighting of IPs as shown here and when each IP is weighted proportionally to its number of neighbors, as shown in Figure~\ref{fig:latefrac_matched}.
 
 \input{tables/signal_uber}
 
@@ -169,18 +170,19 @@ The difference between neighbor late-type fractions for star-forming and quiesce
 %%%%%%%%%  NORMALIZED CONFORMITY SIGNAL:
 
 To better quantify our results we define the normalized conformity signal, 
-$\signorm$, at a projected radius of $\Rproj$ as the difference of the neighbor late-type fractions of star-forming and quiescent IPs, 
+$\signorm$, at a projected radius of $\Rproj$ as the difference of the neighbor star-forming fractions of star-forming and quiescent IPs, 
 divided by the mean of these two fractions:
 
 \begin{equation}
 	\signorm(\Rproj) = \frac
-	{ f^{\textrm{SF-IP}}_{\textrm{late}}-f^{\textrm{Q-IP}}_{\textrm{late}} }
-	{ \left( f^{\textrm{SF-IP}}_{\textrm{late}}+f^{\textrm{Q-IP}}_{\textrm{late}} \right) /2}
+	{ f^{\textrm{SF-IP}}_{\textrm{SF}}-f^{\textrm{Q-IP}}_{\textrm{SF}} }
+	{ \left( f^{\textrm{SF-IP}}_{\textrm{SF}}+f^{\textrm{Q-IP}}_{\textrm{SF}} \right) /2}
+\label{eq:signorm}
 \end{equation}
 
 Table~\ref{table:signal} presents the 
 normalized conformity signal in the matched sample in integrated radial bins of 
-${\Rproj=0}$--1, 1--3, and 3--5~Mpc.
+{${\Rproj=0}$--1}, {1--3}, and {3--5~Mpc}.
 Over the full redshift range ${0.2<z<1.0}$ we find a normalized one-halo conformity 
 signal of 5.3\% and a two-halo signal of 1.1\%.
 We emphasize that galactic conformity is a very small effect, especially the two-halo term, making it highly sensitive to observational uncertainty.
@@ -193,7 +195,7 @@ The observed density of galaxies in our full sample is ${2\times10^{-3}}$~Mpc$^{
   \epstrim{0.3in 0.1in 0.2in 0.3in}
 %  \fbox{\plotone{figures/normsigplot_allz_errorCompare}}
   \plotone{figures/normsigplot_allz_errorCompare}
-  \caption{Normalized conformity signal, $\signorm$, for the matched sample measured to ${\Rproj<5}$~Mpc, with both bootstrap (orange) and jackknife errors (black) shown.  The jackknife errors exceed the bootstrap errors by up to a factor of $\sim$2.
+  \caption{Normalized conformity signal, $\signorm$, for the matched sample measured to ${\Rproj<5}$~Mpc, with both bootstrap (orange) and jackknife errors (black) shown.  The jackknife errors exceed the bootstrap errors by up to a factor of $\sim2$.
 }
   \label{fig:normsig_matched}
 \end{figure}
@@ -213,7 +215,7 @@ It does not, however, take into account that our matched sample contains four sp
 
 Jackknife resampling estimates the uncertainty in $\flate$ \emph{due to field-to-field variation} (i.e.~cosmic variance) within the matched sample.
 As seen in Table~\ref{table:signal}, jackknife resampling yields errors that are at least as large as bootstrap errors at all projected radii,
-and which usually exceed bootstrap errors by a factor of $\sim$2.
+and which usually exceed bootstrap errors by a factor of $\sim2$.
 Cosmic variance is therefore the dominate source of uncertainty in our result.
 
 We emphasize that any meaningful measurement of conformity at $z>0.2$ should accurately account for cosmic variance by using multiple spatially distinct fields and jackknife errors.
@@ -224,11 +226,16 @@ Figure~\ref{fig:normsig_matched} shows $\signorm$ for the matched sample in ${d\
 In the matched sample we find that for ${0<\Rproj<1}$~Mpc the bootstrap error of $\signorm$ is ${\pm0.008}$, which yields a significance of $\sigmaBS=6.8$, while the jackknife error is ${\pm0.015}$, with a significance of $\sigmaJK=3.6$.
  
 The above result uses all star-forming and quiescent IPs in the matched sample, regardless of specific SFR (sSFR).  
-To test whether the conformity signal is sensitive to the magnitude of the difference in sSFR between star-forming and quiescent IPs, we also measure one and two-halo conformity with only the extreme high and low ends of the IP sSFR distribution.  Specifically, we compute $\signorm$ highest and lowest quartiles of IP sSFR (also matched in stellar mass and redshift distribution).
+To test whether the conformity signal is sensitive to the magnitude of the difference in sSFR between star-forming and quiescent IPs, we also measure one- and two-halo conformity with only the extreme high and low ends of the IP sSFR distribution.  Specifically, we compute $\signorm$ highest and lowest quartiles of IP sSFR (also matched in stellar mass and redshift distribution).
 
 The one-halo term over the full redshift range increases slightly to 5.5\%, while the uncertainty decreases to 1.2\%.
 This increases $\sigmaJK$ to 4.7, even though the sample is half the size of the matched IP sample.
 The two-halo term increases slightly to 1.5\%, but the uncertainty also increases to 0.9\%, which decreases $\sigmaJK$ to from 2.5 to 1.7.
+
+%{\bf(move this above to the results section - maybe the end of section 3.3 - not good to highlight our redshift errors here)}
+Additionally, the ${\sigmaz/(1+z) = 0.005}$ PRIMUS redshift precision will result in a dilution of the 
+true conformity signal, as there will be some contamination from satellite galaxies in our IP sample.
+This implies that our measured conformity signal should be treated as a lower limit on the true signal.
 
 \subsection{Cosmic Variance (Field-to-Field Variation?)}\label{sec:cosmic_var}
 
@@ -258,20 +265,20 @@ The error on the one-halo signal measured over all five fields is computed by ja
 
 The field-to-field variation within PRIMUS is substantial.
 Among the five fields in the matched sample the one-halo term of 
-$\signorm$ varies from over $12\%$ with $\sigmaBS=5.9$ in ES1, to $\sim$5\% in 
+$\signorm$ varies from over $12\%$ with $\sigmaBS=5.9$ in ES1, to $\sim5$\% in 
 CDFS, COSMOS, and XMM-CFHTLS, to $0\%$ with $\sigmaBS\simeq0$ in XMM-SXDS.
 This variation clearly indicates the importance of measuring conformity in multiple fields.  A large dispersion exists in the strength of conformity among PRIMUS fields, and the signal in any one field can differ significantly from the mean.
 
 
 \subsection{Redshift and Stellar Mass Dependence}\label{sec:z_mass_bins}
 
-\citet{Hearin15b} predicts that conformity strength (specifically two-halo) should decrease with both increasing central galaxy halo mass and increasing redshift, weakening significantly by $z\sim1$ and disappearing entirely by $z\sim2$.
+HBvdB15 predicts that conformity strength (specifically two-halo) should decrease with both increasing central galaxy halo mass and increasing redshift, weakening significantly by $z\sim1$ and disappearing entirely by $z\sim2$.
 With PRIMUS we can test for trends in conformity signal strength with redshift to $z=1$, and with halo mass using IP stellar mass as a proxy for halo mass.
 We further divide the matched sample into two redshift bins and two stellar mass bins, 
 to investigate the dependence in the magnitude of the signal on redshift or 
 stellar mass.
 In Figure~\ref{fig:latefrac_normsig_compare} we divide the matched IP sample into two redshift bins, ${0.2<z<0.59}$ and ${0.59<z<1}$, and two stellar mass bins, 
-${\log\,(\mstar/\msun)=9.13}$~to~10.82 and 10.82 to 11.33, each containing equal numbers of IPs.
+${\logM=9.13}$--10.82 and 10.82--11.33, each containing equal numbers of IPs.
 The upper panels show $\flate$ for star-forming and quiescent IPs in each redshift or stellar mass bin, while the lower panels plot the corresponding values of
 $\signorm$ for each radial bin. The normalized signal and significance are given in 
 Table~\ref{table:signal}.
@@ -282,7 +289,7 @@ Table~\ref{table:signal}.
 %  \fbox{\plotone{figures/latefrac_normsig_binnedCompare}}
   \plotone{figures/latefrac_normsig_binnedCompare}
   \caption{
-Top panels: Neighbor late-type fractions for star-forming (solid and dash-dot blue lines) and quiescent (dashed red lines) IPs in our matched sample divided into two redshift bins (left) and two stellar mass bins (right).  Errors are computed by bootstrap resampling and have been offset for clarity.
+Top panels: Neighbor star-forming fractions for star-forming (solid and dash-dot blue lines) and quiescent (dashed red lines) IPs in our matched sample divided into two redshift bins (left) and two stellar mass bins (right).  Errors are computed by bootstrap resampling and have been offset for clarity.
 Bottom panels: $\signorm$ for the corresponding redshift and stellar mass divisions in the top panels.  Errors are computed by jackknife resampling.
 The bottom panels also show $\signorm$ for the higher redshift bin (left) and higher stellar mass bin (right) computed \emph{without} the COSMOS field (dashed gray line).
 }
@@ -295,87 +302,82 @@ ${\sigmaJK=4.0}$, while the significance of the ``high'' redshift one-halo term 
 The magnitude of the two-halo term of $\signorm$ in each bin also remains comparable to the full redshift range signal of 1.1\%, but the uncertainty in each bin also increases,
 reducing $\sigmaJK$ from 2.5 for the full redshift range to 1.7 and 1.6 for the low and high redshift bins, respectively.
 
-When dividing the matched sample into two stellar mass bins, the signal in the 
-one-halo term drops to ${3.9(\pm1.3)}$\% (${\sigmaJK=2.9}$) for the low stellar mass bin (${9.13<\log\,(\mstar/\msun)<10.82}$) but
-increases to ${7.0(\pm2.1)}$\% (${\sigmaJK=3.3}$) for the high mass bin (${10.82<\log\,(\mstar/\msun)<11.33}$).
-Similarly, the signal of the two-halo term decreases for the low stellar mass bin 
-and increases for the high stellar mass bin, although $\sigmaJK$ is only 1.5 
-and 2.8 for these stellar mass bins, respectively.
+Dividing the matched sample into two stellar mass bins, we find a significant ($\sim3\sigma$) increase of $\sim75\%$ in one-halo conformity strength for higher compared to lower stellar masses, and a similar although less significant trend with stellar mass in the two-halo term.
+Specifically, the one-halo term drops to ${3.9(\pm1.3)}$\% for the low stellar mass bin (${9.13<\logM<10.82}$), but
+increases to ${7.0(\pm2.1)}$\% for the high-mass bin (${10.82<\logM<11.33}$).
+The low stellar mass two-halo term is ${0.8(\pm0.6)}$\% and increases to ${1.5(\pm0.5)}$\% for high stellar mass.
 
-This result of a stronger conformity signal for higher stellar mass would disagree with \citet{Hearin15b},
-but we emphasize that the low values of $\sigmaJK$ obtained when dividing the matched IP sample into even two bins 
-make it difficult to draw significant conclusions about the presence of any 
-stellar mass or redshift dependence of the conformity signal in PRIMUS.
-This is especially true for the two-halo term.
+Assuming that galaxy stellar mass is tightly coupled with host halo mass, these results appear to contradict the HBvdB15 prediction that conformity strength should decrease with increasing halo mass.
+However, the HBvdB15 prediction is specifically for two-halo conformity, where the significance of our result is lower.
+Additionally, as we explain in the following section, field-to-field variation may have an important effect on the trends we observe.
 
-Surveys larger than the 5.5~$\degsq$ of our matched sample, with comparable depth and sampling density, are required
-to confidently test existing predictions about the relationship between conformity strength and both redshift and mass (see also \S\ref{sec:cosmos}).
+%The most important conclusion is that a larger sample area spanning additional distinct fields is needed to robustly test predictions about the mass (and redshift) dependence of two-halo conformity.
 
+\subsubsection{The Effect of the COSMOS Field}\label{sec:cosmos}
 
-\subsection{The Effect of COSMOS}\label{sec:cosmos}
-
-The COSMOS field contains a high degree of substructure at $z\sim0.35$ and $z\sim0.7$, presenting another opportunity to test the impact of field-to-field variation on our results.
-As Figure~\ref{fig:fig:normsig_fields_1halo} and Table~\ref{table:signal_fields} show, the one-halo conformity term in just the COSMOS field
-agrees with one-halo term of the matched sample.
-We also measured the two-halo term ($1<\Rproj<3$~Mpc) of $\signorm$ for each field individually, and found that it is stronger in COSMOS than in any other field.
+The COSMOS field contains a high degree of large-scale structure at $z\sim0.35$ and $z\sim0.7$, presenting another opportunity to test the impact of field-to-field variation on our results.
+As Figure~\ref{fig:fig:normsig_fields_1halo} and Table~\ref{table:signal_fields} show, the one-halo conformity term in the COSMOS field alone agrees well with the one-halo term of the full matched sample.
+However, we also measure the two-halo term (${1<\Rproj<3}$~Mpc) of $\signorm$ for each field individually, and found that it is stronger in COSMOS than in any other field.
 Additionally, when we divide the matched sample into two redshift and two stellar mass bins, the two-halo term is stronger in both the higher redshift and higher stellar mass bin (see Figure~\ref{fig:latefrac_normsig_compare} and Table~\ref{table:signal}).
 
 To investigate the degree to which COSMOS contributes to the higher redshift and high stellar mass two-halo terms, we recomputed $\signorm$ for these bins using all of the matched sample \emph{except} COSMOS.
 The result is shown in the lower two panels of Figure~\ref{fig:latefrac_normsig_compare} (gray dashed lines).
 In both cases (higher redshift and high stellar mass) the two-halo term of $\signorm$ \emph{without} COSMOS is weaker than the result for all fields.
-However, the results including and excluding COSMOS are each easily within the uncertainty of the other for both the higher stellar mass and especially the higher redshift bin.
-The $1.5(\pm0.5)\%$ ($\sigmaJK=2.8$) two-halo conformity signal we observe at ${10.8<\log\,(\mstar/\msun)<11.3}$ is not dominated by a single field.
+However, the results including and excluding COSMOS are each within the uncertainty of the other for both the higher stellar mass and higher redshift bins.
 
+We conclude that the $1.5(\pm0.5)\%$ two-halo conformity signal we observe at higher stellar mass (${10.8\lesssim \logM
+ \lesssim11.3}$) is not dominated by a single field, but is likely inflated by COSMOS.
+The two-halo signal strength trend with stellar mass we observe is \emph{less} at odds with HBvdB15's predictions if the COSMOS field is excluded.
+However, this is not a statement about COSMOS specifically, but about the degree to which conformity measurements are sensitive to cosmic variance in general.
+Surveys larger than the 5.5~$\degsq$ of our matched sample, with comparable depth and sampling density, are required
+to confidently test existing predictions about the relationship between conformity strength and both redshift and mass.
 
 \subsection{The Relationship Between IP Quenching and Environment}\label{sec:environment}
 
-Behroozi et al.~(in prep.; hereafter~\citePB) proposes an additional metric to probe the relationship between galaxy assembly history and environment, which is likely the cause of two-halo conformity.
-This metric is the relationship between the quenched fraction of central galaxies and environment, and is measured by \citePB for a sample of ${10<\log\,(\mstar/\msun)<10.5}$ galaxies over the redshift range ${0.01<z<0.057}$ selected from the SDSS.
+Behroozi et al.~(in prep., hereafter~\citePB) propose an additional metric to probe the relationship between galaxy assembly history and environment, which is likely the cause of two-halo conformity.
+This metric is the relationship between the quenched fraction of central galaxies and the large-scale environment, and is measured by \citePB for a sample of ${10<\logM<10.5}$ galaxies over the redshift range ${0.01<z<0.057}$ selected from the SDSS.
 
 Within this sample, \citePB defines ``central'' galaxies as those with no larger (in stellar mass) neighbors within a projected distance of 500~kpc and 1000~\kms in redshift.
-Neighbors are defined as galaxies of stellar mass $\mneigh$ where ${0<(\mcentral-\mneigh)<0.5}$~dex, within a projected distance of 0.3--4~Mpc and 1000~\kms in redshift from the central.
+Neighbors are defined as galaxies of stellar mass $\mneigh$ where ${0<(\mcentral-\mneigh)<0.5}$~dex, within a projected distance of 0.3--4~Mpc and 1000~\kms in redshift from the central galaxy.
+These cuts reduce any correlation between environment and central galaxy  stellar mass, in that the median stellar mass of the central galaxies is only very weakly, if at all, correlated with environment.  
+However, \citePB find that the star-forming fraction of central galaxies is negatively correlated with environment, decreasing by about a factor of two as the number of neighbors increases by an order of magnitude from $\sim10$ to $\sim100$.  \citePB also find that the mean sSFR of \emph{star-forming} central galaxies does not depend on environment.
 
-These cuts eliminate any correlation between environment and the central galaxy sample's distribution of (i) stellar mass, and (ii) sSFR among star-forming centrals.
-\citePB finds that the star-forming fraction of central galaxies is negatively correlated with environment, decreasing by about a factor of 2 as the number of neighbors increases by an order of magnitude from $\sim$10 to $\sim$100.
-
-We test for the same relationship in PRIMUS by comparing late-type fraction and environment for a subset of isolated primaries.
-
+We test for the same relationships in PRIMUS by comparing the star-forming fraction with environment for a subset of isolated primaries.
 To ensure that both our IP and neighbor samples are complete, we consider only IPs with stellar masses 0.5~dex \emph{greater} than the completeness limits described in \S\ref{sec:mass_limit}.
-We use the same definition of neighbors as \citePB, and thus for accurate environment measurements our neighbor sample must be complete to 0.5~dex below the minimum IP stellar mass for a particular redshift range, field, and galaxy type.
-Our measure of environment is \Nneigh, the sum of the statistical weights (see \S\ref{sec:targ_weight}) of all neighbors of an IP galaxy, which need not be an integer.
+We use the same definition of neighbors as \citePB, except we use ${\Delta z = 2\,\sigmaz}$ instead of \citePB's 1000~\kms to account for our sample's larger uncertainty in redshift.
+At the redshift range of our sample ${2\,\sigmaz \sim 3000}$~\kms.
+For accurate environment measurements our neighbor sample must be complete to 0.5~dex below the minimum IP stellar mass for a particular redshift range, field, and galaxy type.
+Following \citePB, our measure of environment is \Nneigh, the sum of the statistical weights (see \S\ref{sec:targ_weight}) of all neighbors of an IP galaxy, which need not be an integer.
 
-We select IPs in three bins in stellar mass, each of which spans ${0.2<z<\zmax}$:~${\log\,(\mIP/\msun)=10.1}$~to~10.4 (${\zmax=0.65}$),
-10.4~to~10.7 (${\zmax=0.8}$), and 
-10.7~to~11 (${\zmax=1.0}$).
+We select IPs in three bins in stellar mass, each of which spans ${0.2<z<\zmax}$:~${\log\,(\mIP/\msun)=10.1}$~to~10.4 (${\zmax=0.65}$), 10.4~to~10.7 (${\zmax=0.8}$), and 10.7~to~11 (${\zmax=1.0}$).
 These bins are narrower than the 0.5~dex width used by \citePB because the PRIMUS mass completeness limits depend strongly on redshift; for $z>0.65$ {($z>0.8$)} our neighbor sample is only complete for IP masses greater than $10^{10.4}$ ($10^{10.7}$)~$\msun$.
 Narrow bins allow us to measure the relationship between IP quenched fraction and environment over the full PRIMUS redshift range.
 
-Figure~\ref{fig:environment} shows the late-type fraction of IPs (top left), median IP stellar mass (top right), and mean sSFR for star-forming IPs (bottom left), each as a function of environment for three bins in IP stellar mass.
-The top right panel is a check that the IP stellar mass distribution within each bin is independent of environment:~IPs with few as well as many neighbors have the same stellar mass.
+Figure~\ref{fig:environment} shows the star-forming fraction of IPs (top left), median IP stellar mass (top right), and mean sSFR for star-forming IPs (bottom left), each as a function of environment for three bins in IP stellar mass.
+The top right panel is a check that the IP stellar mass distribution within each bin is independent of environment:~as shown, IPs with few as well as many neighbors have the same stellar mass.
+Similarly, the bottom left panel shows only weak correlations between the sSFR of star-forming IPs and environment, and no correlation for the lowest mass bin.  This clearly indicates that as long as a galaxy is forming stars, the sSFR is not strongly (if at all) dependent on the large-scale environment of the galaxy.
 
-Similarly, the bottom left panel shows only very weak correlation between the sSFR of star-forming IPs and environment, and no correlation for the lowest mass bin.
+However, for all three stellar mass bins, the star-forming fraction of IPs is roughly constant for ${\Nneigh\lesssim10}$, then falls off as $\Nneigh$ increases.
+The difference in IP star-forming fraction between IPs with ${\Nneigh<10}$ and ${\Nneigh>30}$ is
+$\sim13$\% ($2.1\sigma$) for ${10.1<\log\,(\mIP/\msun)<10.4}$,
+$\sim20$\% ($3.4\sigma$) for ${10.4<\log\,(\mIP/\msun)<10.7}$, and
+$\sim10$\% ($1.8\sigma$) for ${10.7<\log\,(\mIP/\msun)<11}$.
+The difference is statistically significant only for the middle stellar mass bin.
 
-For all three bins in stellar mass, the late-type fraction of IPs is roughly constant for ${\Nneigh\lesssim10}$, then falls off as $\Nneigh$ increases.
-The difference in IP late-type fraction between IPs with ${\Nneigh<10}$ and ${\Nneigh>31.6}$ is
-$\sim$13\% ($2.1\sigma$) for ${10.1<\log\,(\mIP/\msun)<10.4}$,
-$\sim$20\% ($3.4\sigma$) for ${10.4<\log\,(\mIP/\msun)<10.7}$, and
-$\sim$10\% ($1.8\sigma$) for ${10.7<\log\,(\mIP/\msun)<11}$.
+We can increase the signal-to-noise in this measurement by considering the decrease in IP star-forming fraction between IPs with
+${\Nneigh<10}$ and ${\Nneigh>30}$ for wider stellar mass bins. 
+For ${10.1<\log\,(\mIP/\msun)<10.7}$ (${\zmax=0.65}$) the IP star-forming fraction decreases by $\sim15$\% ($4.9\sigma$), 
+while for ${10.4<\log\,(\mIP/\msun)<11}$ (${\zmax=0.8}$) we find a decrease of $\sim11$\% ($2.9\sigma$).
 
-We can increase the signal-to-noise in this measurement by considering the decrease in IP late-type fraction between IPs with
-${\Nneigh<10}$ and ${\Nneigh>31.6}$ for wider, overlapping bins in stellar mass.
-For ${10.1<\log\,(\mIP/\msun)<10.7}$ (${\zmax=0.65}$) the IP late-type fraction decreases by $\sim$15\% ($4.9\sigma$), 
-and for ${10.4<\log\,(\mIP/\msun)<11}$ (${\zmax=0.8}$) we find a decrease of $\sim$11\% ($2.9\sigma$).
-
-Two related conclusions can be drawn from Figure~\ref{fig:environment}.
+Two conclusions can be drawn from Figure~\ref{fig:environment}.
 The first is that central galaxies are more likely to be quenched in denser environments, independent of stellar mass.
-This trend is stronger for lower-mass IPs.
+The second conclusion is that as long as a central galaxy in a dense environment is forming stars, it does so as \emph{as efficiently} as a
+star-forming central galaxy of the same stellar mass in a low-density environment.
+%Halo mass does \emph{not} have a strong effect on central galaxy quenching.
 
-The second conclusion is that star-forming centrals in dense environments form stars \emph{as efficiently} as star-forming centrals in low-density environments.
-Halo mass does \emph{not} have a strong effect on central galaxy quenching.
+\todo{Is this evidence for rapid timescale central quenching?}
 
-\todo{Evidence for rapid timescale central quenching?}
-
-These results agree with \citePB, indicating that the dependence of central galaxy late-type fraction on environment is present to $z\sim1$ as well as in the SDSS.
+These results are consistent with \citePB and indicate that the higher probability that a central galaxy is quenched when residing in a large-scale overdensity persists to $z\sim0.5$--1.  This measurement can also be made at higher significance than the usual ``conformity'' signal (as presented above). 
 
 \begin{figure*}
   \epsscale{1.0}
@@ -383,7 +385,7 @@ These results agree with \citePB, indicating that the dependence of central gala
 %  \fbox{\plotone{figures/environment_plots}}
   \plotone{figures/environment_plots}
   \caption{
-Late-type fraction of IPs (top left), median IP stellar mass (top right), and mean sSFR for star-forming IPs (bottom left),
+Star-forming fraction of IPs (top left), median IP stellar mass (top right), and mean sSFR of star-forming IPs (bottom left),
 each as a function of environment for three bins in IP stellar mass:~${10^{10.1}<\log\,(\mIP/\msun)<10^{10.4}~\msun}$ (dash-dot red line),
 ${10^{10.4}<\log\,(\mIP/\msun)<10^{10.7}~\msun}$ (solid magenta line), and
 ${10^{10.7}<\log\,(\mIP/\msun)<10^{11}~\msun}$ (dashed blue line).
@@ -393,19 +395,63 @@ Errors are computed by jackknife resampling.
   \label{fig:environment}
 \end{figure*}
 
-%Figure~\ref{fig:sSFR_vs_mstar} shows the median sSFR for star-forming IPs as a function of stellar mass for three bins in environment, ${\Nneigh<10}$, ${10<\Nneigh<31.6}$, and ${\Nneigh>31.6}$ for IPs with stellar mass ${10^{10.1}<\mIP<10^{11}~\msun}$ in the redshift range ${0.2<z<0.65}$.
-%Specific SFR rate decreases with increasing stellar mass for all star-forming IPs, regardless of environment.
-%This indicates that star formation in centrals is driven by \emph{stellar} mass, and not by halo mass (for which environment is a proxy).
+
+To further investigate the relationship between central galaxy sSFR and environment, in Figure~\ref{fig:sSFR_vs_mstar} we plot the
+mean sSFR for all IPs and for star-forming IPs only as a function of stellar mass in three bins of environment,
+${\Nneigh<10}$, ${10<\Nneigh<30}$, and ${\Nneigh>30}$, in the mass range ${10^{10.1}<\mIP<10^{11}~\msun}$ and redshift range ${0.2<z<0.65}$.
+
+In all three environment bins IP sSFR is negatively correlated with stellar mass.
+This trend is highly significant (${\ge4\sigma}$) both for all IPs, and for star-forming IPs alone,
+with the exception of the ${\Nneigh>30}$ bin of star-forming IPs, where ${\sigma\sim2.3}$.
+This bin also contains the fewest galaxies, which likely contributes to the lower significance.
+
+There is no statistical difference between the low and intermediate density bins, although this could be a result of our inability to robustly measure environment.
+Additionally, there are no statistical differences among the three environment bins for IPs of high stellar mass ($\mIP\gtrsim10^{10.7}~\msun$),
+again for both all IPs and star-forming IP only.
+
+Considering just the bottom panel of Figure~\ref{fig:sSFR_vs_mstar}, a statistically significant difference of $\sim0.3$~dex in sSFR
+does exist between low- and intermediate-mass IPs (${10^{10.1}<\mIP<10^{10.7}~\msun}$) in very dense environments (${\Nneigh>30}$) and those with ${\Nneigh<30}$.
+We conclude that at higher stellar mass ($\mIP\gtrsim10^{10.7}~\msun$), within the errors, the sSFRs of star-forming central galaxies are insensitive to environment.
+However, environment does affect the sSFRs of lower-mass star-forming central galaxies,
+in that in very dense environments central galaxies have a lower sSFR.
+
+Finally, we note that the significances of all Figure~\ref{fig:sSFR_vs_mstar} results drop to ${\sigma\lesssim2.2}$ if we consider the weighted median sSFR instead of the weighted mean, due to a large increase in the ${\Nneigh>30}$ bin errors.
+
+%Star formation in central galaxies is driven primarily by \emph{stellar} mass, with halo mass becoming important for central galaxy quenching only for massive halos.
+
+% SUMMARY OF LAST FIGURE
+%
+% SF IP ONLY:
+% sSFR negatively correlated with Mstar in all environment bins
+% sSFR vs environment (<30 vs >30 neighbors)
+%	low mass bin: no difference in sSFR
+%	med mass bin: 3.3-sigma difference in sSFR, due to largest sample size in this bin?
+%	high mass bin: no difference in sSFR
+%
+% ALL IP:
+% sSFR negatively correlated with Mstar in all environment bins
+% sSFR vs environment (<30 vs >30 neighbors)
+%	low mass bin: 2.5-sigma difference in sSFR
+%	med mass bin: 4.3-sigma difference in sSFR (higher significance due to largest sample size in this bin?)
+%	high mass bin: smallest magnitude difference in sSFR; not significant due to large errors resulting from small sample size
+
+\begin{figure}
+  \epsscale{1.1}
+  \epstrim{0in 0.1in 0.4in 0.7in}
+%  \fbox{\plotone{figures/meanSSFR_vs_Mstar_M13massLim_bothP}}
+  \plotone{figures/meanSSFR_vs_Mstar_M13massLim_bothIP}
+  \caption{
+Median sSFR for star-forming (top panel) and all (bottom panel) IP galaxies as a function of stellar mass for three bins in environment:~${\Nneigh<10}$ (solid black line), ${10<\Nneigh<30}$ (dashed purple line), and ${\Nneigh>30}$ (dash-dot orange line). Errors are computed by jackknife resampling.
+}
+  \label{fig:sSFR_vs_mstar}
+\end{figure}
 
 %\begin{figure}
 %  \epsscale{1.1}
 %  \epstrim{0.3in 0.1in 0.1in 0.4in}
-%  \fbox{\plotone{figures/meanSSFR_vs_Mstar_M13massLim_allIP}}
 %  \plotone{figures/meanSSFR_vs_Mstar_M13massLim_allIP}
-%  \caption{\todo{edit caption}
-%Median sSFR for IP galaxies as a function of stellar mass for three bins in environment:~${\Nneigh<10}$ (solid black line), ${10<\Nneigh<31.6}$ (dashed purple line), and ${\Nneigh>31.6}$ (dash-dot orange line).
-%IP stellar masses span ${10.1<\log\,(\mIP/\msun)<11}$, where our IP sample is complete to at least ${z=0.65}$.
-%Errors are computed by jackknife resampling.
+%  \caption{
+%Median sSFR for IP galaxies as a function of stellar mass for three bins in environment:~${\Nneigh<10}$ (solid black line), ${10<\Nneigh<30}$ (dashed purple line), and ${\Nneigh>30}$ (dash-dot orange line). Errors are computed by jackknife resampling.
 %}
 %  \label{fig:sSFR_vs_mstar}
 %\end{figure}
