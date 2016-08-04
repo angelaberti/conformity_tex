@@ -1,4 +1,4 @@
-\%!TEX root = main.tex
+%!TEX root = main.tex
 
 \section{Results}\label{sec:results}
 
@@ -121,10 +121,24 @@ Stacked neighbor star-forming fractions for the matched sample of star-forming a
 
 In Figure~\ref{fig:latefrac_matched} the one-halo component of the conformity signal is clearly visible as the 4--7\% difference between $\flate$ for star-forming and quiescent IPs at $\Rproj < 1$~Mpc.  Within this range, $\flate$ for both IP types is greatest at $\Rproj<0.5$~Mpc;~$\sim0.86$ for star-fomring and $\sim0.79$--0.82 for quiescent IPs.  At $\Rproj=0.5$~Mpc $\flate$ for both IP types drops sharply by at least 8\% to $\sim0.76$ for star-forming and $\sim0.72$ for quiescent IPs.
 
-This break at 500~kpc is an artifact of the isolation criteria used to identify isolated primaries (see \S\ref{sec:IPsample}), and the fact that the fraction of all galaxies in our full sample that are star-forming is a decreasing function of stellar mass.  IP galaxies by definition have no other galaxies within 500 projected kpc with stellar mass greater than half the stellar mass of the IP.  Thus the neighbor population within 500~kpc of both star-forming and quiescent IPs will be skewed toward star-forming compared to neighbors within $\Rproj=0.5$--5~Mpc.
+This break at 500~kpc is an artifact of the isolation criteria used to identify isolated primaries 
+(see \S\ref{sec:IPsample}), and the fact that the fraction of all galaxies in our full sample that are
+star-forming is a decreasing function of stellar mass.
+Because we require IP galaxies (regardless of type) to have no other galaxies more massive than half the
+stellar mass of the IP within 500 projected kpc, the median stellar mass of galaxies within 500~kpc will
+automatically be lower than the median stellar mass of galaxies beyond this distance.
+The star-forming fraction of neighboring galaxies within 500~kpc will therefore be greater than the star-forming
+fraction of neighbors within $\Rproj=0.5$--5~Mpc.
 
-To confirm that this feature of Figure~\ref{fig:latefrac_matched} is a direct result of our choice of a projected radius of 500~kpc when identifying IPs, we also measured $\flate$ for redshift and stellar mass-matched samples of star-forming and quiescent IPs selected using 250 and 750~kpc as the projected radius in our isolation criteria.  As expected, when 250~kpc is used to identify IPs, the break in $\flate$ for both star-forming and quiescent IPs occurs at 250~kpc, and likewise for 750~kpc.
-Because conformity is the \emph{difference} between $\flate$ for star-forming and quiescent IPs, and does not depend on the absolute star-forming neighbor fraction for either IP type, this break at 500~kpc does not affect our result.
+To confirm that this feature of Figure~\ref{fig:latefrac_matched} is a direct result of our choice of a
+projected radius of 500~kpc when identifying IPs, we also measured $\flate$ for redshift and stellar 
+mass-matched samples of star-forming and quiescent IPs selected using 250 and 750~kpc as the projected 
+radius in our isolation criteria.
+As expected, when 250~kpc is used to identify IPs, the break in $\flate$ 
+for both star-forming and quiescent IPs occurs at 250~kpc, and likewise for 750~kpc.
+Because conformity is the \emph{difference} between $\flate$ for star-forming and quiescent IPs, and does
+not depend on the absolute star-forming neighbor fraction for either IP type, this break at 500~kpc does
+not affect our result.
 
 Over $\Rproj\simeq1$--1.5~Mpc $\flate$ for quiescent IPs increases to $\sim0.75$, while for star-forming IPs $\flate$ begins to level off at $\sim0.76$.  This $\sim1$\% difference between the two fractions is a two-halo conformity signal that persists to to roughly 3~Mpc.  At $3\lesssim\Rproj<5$~Mpc $\flate$ for both IP types is effectively constant and nearly equal, such that no conformity signal is present beyond $\Rproj\simeq3$~Mpc.
 
@@ -272,7 +286,7 @@ This variation clearly indicates the importance of measuring conformity in multi
 
 \subsection{Redshift and Stellar Mass Dependence}\label{sec:z_mass_bins}
 
-HBvdB15 predicts that conformity strength (specifically two-halo) should decrease with both increasing central galaxy halo mass and increasing redshift, weakening significantly by $z\sim1$ and disappearing entirely by $z\sim2$.
+H15b predicts that conformity strength (specifically two-halo) should decrease with both increasing central galaxy halo mass and increasing redshift, weakening significantly by $z\sim1$ and disappearing entirely by $z\sim2$.
 With PRIMUS we can test for trends in conformity signal strength with redshift to $z=1$, and with halo mass using IP stellar mass as a proxy for halo mass.
 We further divide the matched sample into two redshift bins and two stellar mass bins, 
 to investigate the dependence in the magnitude of the signal on redshift or 
@@ -307,8 +321,8 @@ Specifically, the one-halo term drops to ${3.9(\pm1.3)}$\% for the low stellar m
 increases to ${7.0(\pm2.1)}$\% for the high-mass bin (${10.82<\logM<11.33}$).
 The low stellar mass two-halo term is ${0.8(\pm0.6)}$\% and increases to ${1.5(\pm0.5)}$\% for high stellar mass.
 
-Assuming that galaxy stellar mass is tightly coupled with host halo mass, these results appear to contradict the HBvdB15 prediction that conformity strength should decrease with increasing halo mass.
-However, the HBvdB15 prediction is specifically for two-halo conformity, where the significance of our result is lower.
+Assuming that galaxy stellar mass is tightly coupled with host halo mass, these results appear to contradict the H15b prediction that conformity strength should decrease with increasing halo mass.
+However, the H15b prediction is specifically for two-halo conformity, where the significance of our result is lower.
 Additionally, as we explain in the following section, field-to-field variation may have an important effect on the trends we observe.
 
 %The most important conclusion is that a larger sample area spanning additional distinct fields is needed to robustly test predictions about the mass (and redshift) dependence of two-halo conformity.
@@ -327,7 +341,7 @@ However, the results including and excluding COSMOS are each within the uncertai
 
 We conclude that the $1.5(\pm0.5)\%$ two-halo conformity signal we observe at higher stellar mass (${10.8\lesssim \logM
  \lesssim11.3}$) is not dominated by a single field, but is likely inflated by COSMOS.
-The two-halo signal strength trend with stellar mass we observe is \emph{less} at odds with HBvdB15's predictions if the COSMOS field is excluded.
+The two-halo signal strength trend with stellar mass we observe is \emph{less} at odds with H15b's predictions if the COSMOS field is excluded.
 However, this is not a statement about COSMOS specifically, but about the degree to which conformity measurements are sensitive to cosmic variance in general.
 Surveys larger than the 5.5~$\degsq$ of our matched sample, with comparable depth and sampling density, are required
 to confidently test existing predictions about the relationship between conformity strength and both redshift and mass.
